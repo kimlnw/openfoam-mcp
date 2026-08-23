@@ -34,7 +34,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://app.mcpmarket.com/thzhanuman/seller"
+Homepage = "https://github.com/kimlnw/openfoam-mcp"
 Repository = "https://github.com/kimlnw/openfoam-mcp"
 
 [project.scripts]
