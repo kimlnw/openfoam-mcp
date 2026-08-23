@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openfoam-mcp"
+version = "1.0.0"
+description = "OpenFOAM MCP by iLab — a CFD co-pilot MCP server: plan cases, auto-generate graded meshes, edit dictionaries, sanity-check setups, and interpret solver residuals from any MCP client."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "iLab (Tanawat Manokieng)" }]
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "openfoam",
+    "cfd",
+    "simulation",
+    "fluid-dynamics",
+    "engineering",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    # Pin to the 1.x SDK: it ships the FastMCP class used here and matches
+    # current Claude Desktop / MCP client expectations. mcp 2.0 reorganised
+    # the server API (FastMCP removed) and is not yet the ecosystem default.
+    "mcp>=1.2.0,<2.0.0",
+]
+
+[project.urls]
+Homepage = "https://app.mcpmarket.com/thzhanuman/seller"
+Repository = "https://github.com/thzhanuman/openfoam-mcp"
+
+[project.scripts]
+openfoam-mcp = "openfoam_mcp.server:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/openfoam_mcp"]
