@@ -71,9 +71,6 @@ Two tools do the work most people find fiddly:
 | `analyze_residuals` | Parse a solver log into per-field residual drop + convergence verdict. |
 | `run_openfoam_command` | Run a whitelisted OpenFOAM utility inside a case (if installed). |
 
-See [`COMPARISON.md`](COMPARISON.md) for how this stacks up against the other
-OpenFOAM MCP server.
-
 ## Install & run
 
 The server ships as a PyPI package with a console entry point, so the usual

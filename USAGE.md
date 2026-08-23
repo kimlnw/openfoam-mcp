@@ -27,12 +27,19 @@ call OpenFOAM utilities simply say so when it isn't present.
 
 ---
 
-## 2A. Install it yourself (from the wheel) — Windows
+## 2A. Install it yourself (from a wheel) — Windows
 
-You have `openfoam_mcp-0.1.0-py3-none-any.whl`. Open PowerShell and run:
+Wheels are not committed to the repo. Build one from the project folder first:
 
 ```powershell
-pip install "C:\path\to\openfoam_mcp-0.1.0-py3-none-any.whl"
+pip install build
+python -m build
+```
+
+That writes `dist\openfoam_mcp-1.0.0-py3-none-any.whl`. Install it with:
+
+```powershell
+pip install "dist\openfoam_mcp-1.0.0-py3-none-any.whl"
 ```
 
 That installs the server plus its dependency (the `mcp` SDK). Verify it runs:
@@ -104,7 +111,7 @@ To test the uvx path **before** publishing, point it at your local wheel:
   "mcpServers": {
     "openfoam": {
       "command": "uvx",
-      "args": ["--from", "C:\\path\\to\\openfoam_mcp-0.1.0-py3-none-any.whl", "openfoam-mcp"]
+      "args": ["--from", "C:\\path\\to\\openfoam_mcp-1.0.0-py3-none-any.whl", "openfoam-mcp"]
     }
   }
 }
