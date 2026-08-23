@@ -35,7 +35,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://app.mcpmarket.com/thzhanuman/seller"
-Repository = "https://github.com/kimlnw/OpenFoam-"
+Repository = "https://github.com/kimlnw/openfoam-mcp"
 
 [project.scripts]
 openfoam-mcp = "openfoam_mcp.server:main"
