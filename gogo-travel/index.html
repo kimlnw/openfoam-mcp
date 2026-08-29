@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GOGO! — Go somewhere good</title>
+  <meta name="description" content="Handpicked small-group and independent trips, priced honestly. Search destinations, compare trips, and plan a trip that fits your budget.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="home">
+  <header id="site-header"></header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__scrim"></div>
+      <div class="wrap">
+        <span class="hero__eyebrow">Go somewhere good</span>
+        <h1>Where to next?</h1>
+        <p class="hero__sub">Handpicked trips, honest prices, and zero hassle. Tell us where — we&#39;ll handle the rest.</p>
+
+        <form class="searchbar" id="search-form" autocomplete="off">
+          <div class="dd">
+            <button class="seg" type="button" id="destBtn" style="width:100%" aria-haspopup="listbox" aria-expanded="false">
+              <span class="k">Where</span>
+              <span class="v is-empty" id="destVal">Anywhere
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="dd__panel" id="destPanel" role="listbox" hidden></div>
+          </div>
+          <div class="searchbar__sep"></div>
+          <button class="seg" type="button" id="whenBtn" style="flex:1.1">
+            <span class="k">When</span>
+            <span class="v" id="whenVal">This weekend</span>
+          </button>
+          <div class="searchbar__sep"></div>
+          <div class="seg seg--who" style="flex:1.1">
+            <span class="k">Who</span>
+            <div class="who-row">
+              <button class="step fx" type="button" id="whoDec" aria-label="Fewer travelers"></button>
+              <span class="val" id="whoVal">2 travelers</span>
+              <button class="step fx" type="button" id="whoInc" aria-label="More travelers"></button>
+            </div>
+          </div>
+          <button class="btn btn--primary btn--lg searchbar__go" type="submit" id="searchBtn">
+            <span style="display:inline-flex;width:19px;height:19px" id="searchIcon"></span> Search
+          </button>
+        </form>
+
+        <div class="hero__trust">
+          <span id="trust-rating"></span>
+          <span class="dot">•</span>
+          <span>12,000+ trips booked</span>
+          <span class="dot">•</span>
+          <span>Free cancellation up to 48h</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRENDING -->
+    <section class="section wrap">
+      <div class="section__head">
+        <div>
+          <span class="eyebrow">Popular right now</span>
+          <h2 style="margin-top:8px">Trending trips</h2>
+        </div>
+        <div class="section__filters" id="catFilters"></div>
+      </div>
+      <div class="grid-3" id="trendingGrid"></div>
+      <p class="muted" id="trendingCount"></p>
+    </section>
+
+    <!-- WHY GOGO -->
+    <section class="section wrap">
+      <div class="benefits reveal">
+        <div class="benefit">
+          <div class="benefit__ic" style="background:var(--red-soft);color:var(--red)"></div>
+          <h3>Handpicked, not endless</h3>
+          <p>Every trip is vetted by real travellers. No decision fatigue, no dud hotels.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit__ic" style="background:var(--teal-soft);color:var(--teal)"></div>
+          <h3>One honest price</h3>
+          <p>The total you see is the total you pay. Taxes and fees included, always.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit__ic" style="background:var(--violet-soft);color:var(--violet)"></div>
+          <h3>Humans, 24/7</h3>
+          <p>A real person is a tap away before, during, and after your trip.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAN BY BUDGET -->
+    <section class="section wrap" style="padding-bottom:8px">
+      <div class="cta-band reveal">
+        <div>
+          <span class="eyebrow">New · Plan by budget</span>
+          <h2>Tell us your budget. We&#39;ll build the trip.</h2>
+          <p>Set how much you want to spend and how many are going — GOGO! finds trips that fit and breaks down every dollar.</p>
+        </div>
+        <a class="btn btn--primary btn--lg" href="planner.html">Plan my trip →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>
