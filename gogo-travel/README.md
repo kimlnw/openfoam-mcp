@@ -15,9 +15,19 @@ badge-and-pin logo, the Raleway type, and four working screens.
 | `search.html` | Search results | Price / type / duration / rating filters, sort, list ⇄ map view, empty state |
 | `trip.html` | Trip detail | Photo gallery, Overview / Itinerary / Reviews tabs, day accordion, booking widget with live total |
 | `planner.html` | Budget planner | Set budget + travellers + nights → best-fit trip, spend breakdown, alternatives |
+| `surprise.html` | Surprise Me | A mystery-weekend generator — pick a vibe + budget and it spins up a weekend that fits |
 
 Real navigation ties them together (Home → Search → Trip; the planner links
 straight to a trip). The wishlist persists per browser via `localStorage`.
+
+### Signature features (things the big travel sites don't do)
+
+- **Surprise Me** (`surprise.html`) — a playful mystery-weekend generator that
+  weights its pick by how much time you'd actually get away.
+- **Usable weekend hours** — every trip shows the hours you really get at the
+  destination once the round trip from Bangkok is subtracted (a Fri 18:00 →
+  Sun 20:00 window), plus a plain-language verdict. See `GOGO.usableHours()`
+  and `GOGO.driveLabel()` in `assets/js/data.js`.
 
 ## Run it locally
 

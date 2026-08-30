@@ -88,6 +88,17 @@
     return null;
   };
 
+  /* ---- distance from Bangkok + "usable weekend hours" (a GOGO original) --- */
+  var DRIVE = { amphawa: 1.5, ayutthaya: 1.5, pattaya: 2, bangkok: 0.3, kanchanaburi: 2.5, khaoyai: 2.5, huahin: 3, samet: 3.5, chiangmai: 3 };
+  GOGO.trips.forEach(function (t) { t.driveHrs = DRIVE[t.id] || 2; t.fly = (t.id === "chiangmai"); });
+  // A Friday 18:00 -> Sunday 20:00 escape is a 50-hour window; subtract the round trip.
+  GOGO.usableHours = function (t) { return Math.max(8, Math.round(50 - 2 * t.driveHrs)); };
+  GOGO.driveLabel = function (t) {
+    if (t.id === "bangkok") return "Right here in the city";
+    if (t.fly) return "~" + t.driveHrs + "h door-to-door by air";
+    return "~" + t.driveHrs + "h drive from Bangkok";
+  };
+
   /* ---- shared detail fragments ------------------------------------------ */
   var INCLUDED = ["2 nights at your chosen stay", "Return transfers from Bangkok", "Daily breakfast", "A local guide on day trips", "24/7 support before and during"];
   var NOT_INCLUDED = ["Flights (Chiang Mai trips)", "Travel insurance", "Some lunches & dinners"];
@@ -194,6 +205,9 @@
     calendar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>',
     list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>',
     map: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>',
-    bed: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 14h18M3 18v2M21 18v2M7 10V8a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2"/></svg>'
+    bed: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 14h18M3 18v2M21 18v2M7 10V8a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2"/></svg>',
+    car: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l1.6-4.2A2 2 0 0 1 7.5 5.5h9a2 2 0 0 1 1.9 1.3L20 11v5H4z"/><path d="M4 11h16"/><circle cx="7.5" cy="16" r="1.4"/><circle cx="16.5" cy="16" r="1.4"/></svg>',
+    plane: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13L3 11l1.2-2 6.3 1 5-5.4a1.6 1.6 0 0 1 2.4 2L18 15l1 5-2 .8-3-5.2-4 3.8-.5-2.4z"/></svg>',
+    dice: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.15" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.15" fill="currentColor" stroke="none"/><circle cx="15.5" cy="8.5" r="1.15" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15.5" r="1.15" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.15" fill="currentColor" stroke="none"/></svg>'
   };
 })();

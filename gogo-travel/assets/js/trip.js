@@ -41,6 +41,13 @@
     "<span>" + GOGO.svg("pin", 15) + trip.region + ", " + trip.country + "</span>" +
     "<span>" + GOGO.svg("clock", 15) + trip.days + " days</span>";
 
+  var uh = GOGO.usableHours(trip);
+  var verdict = uh >= 44 ? "Loads of time" : uh >= 34 ? "Plenty of time" : "Tight but doable";
+  $("weekfit").innerHTML =
+    '<div class="weekfit__item">' + GOGO.svg(trip.fly ? "plane" : "car", 18) + "<span>" + GOGO.driveLabel(trip) + "</span></div>" +
+    '<div class="weekfit__item">' + GOGO.svg("clock", 18) + "<b>~" + uh + " hrs</b><span>at the destination</span></div>" +
+    '<div class="weekfit__item">' + GOGO.svg("check", 18) + "<b>" + verdict + "</b></div>";
+
   var saved = GOGO.wish.has(trip.id);
   $("tripActions").innerHTML =
     '<button class="heart" type="button" id="saveBtn" aria-pressed="' + saved + '">' + GOGO.svg("heart", 17) + '<span id="saveLabel">' + (saved ? "Saved" : "Save") + "</span></button>" +

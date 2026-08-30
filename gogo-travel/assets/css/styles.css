@@ -406,3 +406,45 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
 .stay__price span { display: block; font-size: .72rem; color: var(--faint); }
 .stays__note { font-size: .8rem; color: var(--faint); margin-top: 12px; }
 @media (max-width: 480px) { .stay { flex-wrap: wrap; } .stay__price { text-align: left; } }
+
+/* ---- Weekend-fit strip (drive time + usable hours) — a GOGO original ----- */
+.weekfit { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.weekfit__item { display: flex; align-items: center; gap: 9px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-size: .88rem; }
+.weekfit__item svg { width: 18px; height: 18px; color: var(--red); flex: none; }
+.weekfit__item b { color: var(--ink); font-weight: 800; }
+.weekfit__item span { color: var(--ink-soft); font-weight: 600; }
+
+/* ---- Hero secondary link ------------------------------------------------- */
+.hero__alt { margin-top: 16px; }
+.hero__alt a { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-weight: 700; font-size: .95rem; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.4); padding: 9px 16px; border-radius: 999px; }
+.hero__alt a:hover { background: rgba(255,255,255,.28); color: #fff; }
+.hero__alt svg { width: 18px; height: 18px; }
+
+/* ---- Surprise Me (mystery weekend) --------------------------------------- */
+.surprise-head { text-align: center; max-width: 620px; margin: 0 auto 6px; }
+.surprise-head h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+.surprise-head p { color: var(--ink-soft); font-size: 1.05rem; margin-top: 10px; }
+.surprise-controls { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: flex-start; margin: 28px auto 22px; }
+.sc-group { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.sc-group > .filter-label { margin: 0; }
+.sc-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.sc-who { display: flex; align-items: center; gap: 12px; }
+.sc-who .val { font-weight: 700; min-width: 96px; text-align: center; }
+.spin-wrap { max-width: 560px; margin: 0 auto; }
+.spin-btn { width: 100%; font-size: 1.1rem; padding: 16px; gap: 10px; }
+.spin-btn svg { width: 22px; height: 22px; }
+.spin-stage { margin-top: 22px; }
+.spin-idle { text-align: center; color: var(--faint); padding: 46px 20px; border: 1px dashed var(--line); border-radius: var(--r-xl); }
+.spin-card { position: relative; border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-lift); background: var(--surface); border: 1px solid var(--line); }
+.spin-card__img { height: 220px; position: relative; display: grid; place-items: center; }
+.spin-card__img .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,8,30,.10), rgba(10,8,30,.48)); }
+.spin-card__eyebrow { position: absolute; top: 16px; left: 0; right: 0; text-align: center; color: #fff; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; font-size: .66rem; opacity: .92; z-index: 1; }
+.spin-card__place { position: relative; color: #fff; font-weight: 900; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.02em; text-shadow: 0 3px 20px rgba(0,0,0,.45); text-align: center; padding: 0 20px; }
+.spin-card__body { padding: 22px 24px 24px; }
+.spin-why { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 16px; }
+.spin-why .weekfit__item { background: var(--inset); }
+.spin-card__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.is-spinning .spin-card__place { filter: blur(1.5px); opacity: .92; }
+@keyframes gogo-pop { 0% { transform: scale(.96); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.spin-reveal { animation: gogo-pop .35s ease both; }
+@media (prefers-reduced-motion: reduce) { .spin-reveal { animation: none; } }

@@ -22,7 +22,7 @@
 
   var NAV = [
     { label: "Destinations", href: "search.html" },
-    { label: "Experiences", href: "search.html" },
+    { label: "Surprise me", href: "surprise.html" },
     { label: "Deals", href: "#" },
     { label: "About", href: "#" }
   ];
@@ -118,9 +118,10 @@
 
     // highlight active nav
     var page = document.body.getAttribute("data-page");
-    if (page === "search" && h) {
-      var first = h.querySelector('.site-nav a[href="search.html"]');
-      if (first) first.setAttribute("aria-current", "page");
+    var navMap = { search: "search.html", surprise: "surprise.html" };
+    if (navMap[page] && h) {
+      var lnk = h.querySelector('.site-nav a[href="' + navMap[page] + '"]');
+      if (lnk) lnk.setAttribute("aria-current", "page");
     }
 
     document.addEventListener("click", onHeartClick);

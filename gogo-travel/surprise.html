@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surprise me — GOGO!</title>
+  <meta name="description" content="Can't decide? GOGO! spins up a mystery weekend that fits your vibe, your budget and the hours you've actually got.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="surprise">
+  <header id="site-header"></header>
+
+  <main class="wrap" style="padding:44px 0 60px">
+    <div class="surprise-head">
+      <span class="eyebrow" style="display:block;margin-bottom:10px">Can't decide?</span>
+      <h1>Spin up a mystery weekend</h1>
+      <p>Pick a vibe and a budget — GOGO! rolls the dice and reveals a weekend that actually fits the hours you've got.</p>
+    </div>
+
+    <div class="surprise-controls">
+      <div class="sc-group">
+        <span class="filter-label">Vibe</span>
+        <div class="sc-row" id="vibeRow"></div>
+      </div>
+      <div class="sc-group">
+        <span class="filter-label">Max budget / person</span>
+        <div class="sc-row" id="budgetRow"></div>
+      </div>
+      <div class="sc-group">
+        <span class="filter-label">Travellers</span>
+        <div class="sc-who">
+          <button class="step fx" type="button" id="sDec" aria-label="Fewer travellers"></button>
+          <span class="val" id="sWho">2 travellers</span>
+          <button class="step fx" type="button" id="sInc" aria-label="More travellers"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="spin-wrap">
+      <button class="btn btn--primary spin-btn" type="button" id="spinBtn"></button>
+      <div class="spin-stage" id="spinStage">
+        <div class="spin-idle">Set a vibe and hit <b>Surprise me!</b> — we'll do the deciding.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/surprise.js"></script>
+</body>
+</html>
