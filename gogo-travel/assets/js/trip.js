@@ -21,12 +21,14 @@
   /* ---- crumb + gallery --------------------------------------------------- */
   $("crumb").textContent = trip.country + " · " + trip.region;
 
+  var photoLayer = "url('assets/img/" + trip.id + ".jpg') center/cover no-repeat, ";
+  function bgFor(im, i) { return (i === 0 ? photoLayer : "") + im.bg; }
   function renderGallery() {
     var g = detail.gallery;
-    $("gMain").style.background = g[st.img].bg;
+    $("gMain").style.background = bgFor(g[st.img], st.img);
     $("gCap").textContent = g[st.img].cap;
     $("thumbs").innerHTML = g.map(function (im, i) {
-      return '<button class="thumb' + (i === st.img ? " is-active" : "") + '" type="button" data-i="' + i + '" style="background:' + im.bg + '" aria-label="Photo ' + (i + 1) + '"></button>';
+      return '<button class="thumb' + (i === st.img ? " is-active" : "") + '" type="button" data-i="' + i + '" style="background:' + bgFor(im, i) + '" aria-label="Photo ' + (i + 1) + '"></button>';
     }).join("");
   }
   $("thumbs").addEventListener("click", function (e) {

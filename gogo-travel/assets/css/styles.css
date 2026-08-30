@@ -127,15 +127,17 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 
 /* ---- Destination "photo" gradients (placeholders for real imagery) ------- */
 .ph { position: relative; background: var(--inset); }
-.ph--pattaya { background: linear-gradient(150deg,#FFB13C,#FF6A3D 55%,#E23E6B); }
-.ph--huahin { background: linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A); }
-.ph--samet { background: linear-gradient(150deg,#12B39B,#0E9BB0 60%,#F2B33C); }
-.ph--ayutthaya { background: linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B); }
-.ph--amphawa { background: linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52); }
-.ph--chiangmai { background: linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E); }
-.ph--kanchanaburi { background: linear-gradient(150deg,#A7D98F,#3E9CC4 55%,#2F5E7E); }
-.ph--khaoyai { background: linear-gradient(150deg,#8FD9A0,#3E9C6C 55%,#215E3E); }
-.ph--bangkok { background: linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#8E2D6B); }
+/* Each destination layers a real photo (assets/img/<id>.jpg) over a gradient.
+   No photo yet? The image layer 404s harmlessly and the gradient shows through. */
+.ph--pattaya { background: url('../img/pattaya.jpg') center/cover no-repeat, linear-gradient(150deg,#FFB13C,#FF6A3D 55%,#E23E6B); }
+.ph--huahin { background: url('../img/huahin.jpg') center/cover no-repeat, linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A); }
+.ph--samet { background: url('../img/samet.jpg') center/cover no-repeat, linear-gradient(150deg,#12B39B,#0E9BB0 60%,#F2B33C); }
+.ph--ayutthaya { background: url('../img/ayutthaya.jpg') center/cover no-repeat, linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B); }
+.ph--amphawa { background: url('../img/amphawa.jpg') center/cover no-repeat, linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52); }
+.ph--chiangmai { background: url('../img/chiangmai.jpg') center/cover no-repeat, linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E); }
+.ph--kanchanaburi { background: url('../img/kanchanaburi.jpg') center/cover no-repeat, linear-gradient(150deg,#A7D98F,#3E9CC4 55%,#2F5E7E); }
+.ph--khaoyai { background: url('../img/khaoyai.jpg') center/cover no-repeat, linear-gradient(150deg,#8FD9A0,#3E9C6C 55%,#215E3E); }
+.ph--bangkok { background: url('../img/bangkok.jpg') center/cover no-repeat, linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#8E2D6B); }
 
 /* ---- Trip card ----------------------------------------------------------- */
 .tcard { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; color: inherit; }

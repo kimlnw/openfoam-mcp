@@ -69,14 +69,14 @@
 
   /* ---- render ------------------------------------------------------------ */
   function spinningCard() {
-    return '<div class="spin-card is-spinning"><div class="spin-card__img" style="background:' + GOGO.gradCss(GOGO.trips[0].grad) + '">' +
+    return '<div class="spin-card is-spinning"><div class="spin-card__img ph--' + GOGO.trips[0].grad + '">' +
       '<div class="scrim"></div><span class="spin-card__eyebrow">Rolling the dice…</span>' +
       '<div class="spin-card__place">…</div></div></div>';
   }
   function reveal(t, relaxed) {
     var uh = GOGO.usableHours(t);
     stage.innerHTML =
-      '<div class="spin-card spin-reveal"><div class="spin-card__img" style="background:' + GOGO.gradCss(t.grad) + '">' +
+      '<div class="spin-card spin-reveal"><div class="spin-card__img ph--' + t.grad + '">' +
         '<div class="scrim"></div><span class="spin-card__eyebrow">Your mystery weekend</span>' +
         '<div class="spin-card__place">' + t.title + "</div></div>" +
         '<div class="spin-card__body">' +
@@ -110,7 +110,7 @@
     (function tick() {
       var c = list[Math.floor(Math.random() * list.length)];
       placeEl.textContent = c.region;
-      imgEl.style.background = GOGO.gradCss(c.grad);
+      imgEl.className = "spin-card__img ph--" + c.grad;
       elapsed += delay; delay += 9;
       if (elapsed < 1350) setTimeout(tick, delay);
       else { reveal(final, relaxed); spinBtn.disabled = false; }

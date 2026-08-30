@@ -69,9 +69,11 @@ gogo-travel/
 - **Brand colour & type** — the CSS variables at the top of
   `assets/css/styles.css` (`--red`, neutrals, radii, shadows). Change `--red`
   to reshade the whole site.
-- **Photography** — destination images are CSS-gradient placeholders
-  (`.ph--*` classes and `GOGO.grad`). Swap them for real `<img>` / background
-  images when you have them.
+- **Photography** — each destination shows a real photo layered over a gradient
+  fallback (the `.ph--*` classes). Add photos to `assets/img/`, or run
+  `python3 assets/img/fetch-photos.py` to pull freely-licensed ones — see
+  `assets/img/README.md`. A missing photo simply falls back to the gradient, so
+  nothing looks broken before you add them.
 
 ## Notes for developers
 
