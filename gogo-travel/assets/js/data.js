@@ -1,39 +1,86 @@
 /* ==========================================================================
    GOGO! Travel — shared data + helpers  (window.GOGO)
-   Sample content for a starter site. Swap trips/details for your real catalogue.
+   Thailand weekend getaways. Destinations and hotel names are REAL places;
+   prices, ratings and availability are REPRESENTATIVE SAMPLE values for the
+   demo — confirm live figures via an Agoda / Trip.com partner API before use.
    ========================================================================== */
 (function () {
   "use strict";
   var GOGO = (window.GOGO = window.GOGO || {});
 
-  /* ---- money ------------------------------------------------------------- */
-  GOGO.money = function (n) { return "$" + Math.round(n).toLocaleString(); };
+  /* ---- money (Thai baht) ------------------------------------------------- */
+  GOGO.money = function (n) { return "฿" + Math.round(n).toLocaleString(); };
 
   /* ---- gradient "photo" strings (mirror the .ph--* CSS classes) ---------- */
   GOGO.grad = {
-    bali:      "linear-gradient(150deg,#12B39B,#0E7CA8 60%,#F2B33C)",
-    kyoto:     "linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E)",
-    lisbon:    "linear-gradient(150deg,#FFB13C,#FF6A3D 55%,#E23E6B)",
-    fjords:    "linear-gradient(150deg,#6FC7E8,#2C7FC4 58%,#243B7A)",
-    patagonia: "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#3B4E9E)",
-    amalfi:    "linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#3AA6C4)",
-    marrakech: "linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B)",
-    porto:     "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#3B7E9E)",
-    crete:     "linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A)"
+    pattaya:      "linear-gradient(150deg,#FFB13C,#FF6A3D 55%,#E23E6B)",
+    huahin:       "linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A)",
+    samet:        "linear-gradient(150deg,#12B39B,#0E9BB0 60%,#F2B33C)",
+    ayutthaya:    "linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B)",
+    amphawa:      "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52)",
+    chiangmai:    "linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E)",
+    kanchanaburi: "linear-gradient(150deg,#A7D98F,#3E9CC4 55%,#2F5E7E)",
+    khaoyai:      "linear-gradient(150deg,#8FD9A0,#3E9C6C 55%,#215E3E)",
+    bangkok:      "linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#8E2D6B)"
   };
-  GOGO.gradCss = function (name) { return GOGO.grad[name] || GOGO.grad.bali; };
+  GOGO.gradCss = function (name) { return GOGO.grad[name] || GOGO.grad.pattaya; };
 
-  /* ---- catalogue --------------------------------------------------------- */
+  /* ---- catalogue (weekend getaways from Bangkok) ------------------------- */
   GOGO.trips = [
-    { id: "porto", title: "Porto City Weekend", country: "Portugal", region: "Northern Portugal", days: 3, rating: 4.6, price: 540, type: "City", grad: "porto", tags: ["City break", "Wine"], blurb: "Tiled lanes, port-wine cellars and the Douro at golden hour." },
-    { id: "crete", title: "Crete Island Hop", country: "Greece", region: "Crete", days: 5, rating: 4.6, price: 760, type: "Beach", grad: "crete", tags: ["Beach", "Boat"], blurb: "Pink-sand coves, mountain villages and long seaside lunches." },
-    { id: "marrakech", title: "Marrakech & the Atlas", country: "Morocco", region: "Marrakech", days: 5, rating: 4.6, price: 890, type: "Cultural", grad: "marrakech", tags: ["Culture", "Desert"], blurb: "Souks and riads, then a Berber village in the High Atlas foothills." },
-    { id: "lisbon", title: "Lisbon to the Algarve", country: "Portugal", region: "Lisbon & Algarve", days: 6, rating: 4.7, price: 980, type: "City", grad: "lisbon", tags: ["City break", "Coast"], blurb: "Tiled streets, coastal trains and golden-hour miradouros." },
-    { id: "bali", title: "Bali & the Nusa Islands", country: "Indonesia", region: "Bali", days: 7, rating: 4.9, price: 1240, type: "Beach", grad: "bali", tags: ["Island-hopping", "Snorkelling"], blurb: "Rice terraces, island-hopping and reef snorkelling on a relaxed loop." },
-    { id: "amalfi", title: "Amalfi Coast Escape", country: "Italy", region: "Amalfi Coast", days: 6, rating: 4.8, price: 1560, type: "Beach", grad: "amalfi", tags: ["Coast", "Food"], blurb: "Cliffside villages, lemon groves and long lunches above the sea." },
-    { id: "kyoto", title: "Kyoto Temple Trail", country: "Japan", region: "Kyoto", days: 5, rating: 4.8, price: 1690, type: "City", grad: "kyoto", tags: ["Culture", "Food"], blurb: "Historic shrines, tea houses and the lantern-lit Gion district." },
-    { id: "fjords", title: "Fjords & Northern Lights", country: "Norway", region: "Norwegian Fjords", days: 8, rating: 4.9, price: 2150, type: "Adventure", grad: "fjords", tags: ["Aurora", "Fjords"], blurb: "Deep fjords by day, aurora hunting by night, above the Arctic line." },
-    { id: "patagonia", title: "Patagonia Wild Trek", country: "Chile", region: "Patagonia", days: 10, rating: 4.9, price: 2480, type: "Adventure", grad: "patagonia", tags: ["Trekking", "Glaciers"], blurb: "Granite spires, glacier valleys and the classic W circuit." }
+    { id: "amphawa", title: "Amphawa Floating Market", country: "Thailand", region: "Samut Songkhram", days: 2, rating: 4.3, price: 2900, type: "Cultural", grad: "amphawa", tags: ["Floating market", "Fireflies"], blurb: "Canalside markets, a longtail firefly cruise and the Maeklong railway market.",
+      stays: [
+        { name: "Baan Amphawa Resort & Spa", kind: "Resort", area: "Canalside", nightly: 2800, rating: 4.3 },
+        { name: "Amphawa Na Non Hotel & Spa", kind: "Hotel", area: "By the floating market", nightly: 2400, rating: 4.4 },
+        { name: "Canalside homestay (representative)", kind: "Homestay", area: "Amphawa canal", nightly: 900, rating: 4.2 }
+      ] },
+    { id: "ayutthaya", title: "Ayutthaya Temple Weekend", country: "Thailand", region: "Ayutthaya", days: 2, rating: 4.6, price: 3200, type: "Cultural", grad: "ayutthaya", tags: ["Temples", "Riverside"], blurb: "The ruined temples of Siam's old capital, best by bicycle and at sunset.",
+      stays: [
+        { name: "Sala Ayutthaya", kind: "Hotel", area: "Riverside, temple view", nightly: 3600, rating: 4.7 },
+        { name: "Classic Kameo Hotel & Serviced Apartments", kind: "Residence", area: "City centre", nightly: 1600, rating: 4.3 },
+        { name: "iuDia on the river", kind: "Residence", area: "Riverside", nightly: 2200, rating: 4.5 }
+      ] },
+    { id: "pattaya", title: "Pattaya Beach Break", country: "Thailand", region: "Chonburi", days: 2, rating: 4.4, price: 3900, type: "Beach", grad: "pattaya", tags: ["Beach", "Islands"], blurb: "Two easy hours from Bangkok — beach clubs, Koh Larn day-trips and night markets.",
+      stays: [
+        { name: "Holiday Inn Pattaya", kind: "Resort", area: "Pattaya Beach Road", nightly: 3200, rating: 4.5 },
+        { name: "Hilton Pattaya", kind: "Hotel", area: "Central Pattaya", nightly: 4100, rating: 4.6 },
+        { name: "Amari Pattaya", kind: "Hotel", area: "North Pattaya", nightly: 2600, rating: 4.4 }
+      ] },
+    { id: "bangkok", title: "Bangkok Riverside Staycation", country: "Thailand", region: "Bangkok", days: 2, rating: 4.5, price: 4200, type: "City", grad: "bangkok", tags: ["Riverside", "Rooftops"], blurb: "A weekend of temples, river ferries, rooftop bars and endless street food.",
+      stays: [
+        { name: "Chatrium Hotel Riverside Bangkok", kind: "Hotel", area: "Charoen Krung, riverside", nightly: 3400, rating: 4.6 },
+        { name: "Avani+ Riverside Bangkok", kind: "Hotel", area: "Thonburi riverside", nightly: 3900, rating: 4.6 },
+        { name: "Bangkok Marriott Marquis Queen's Park", kind: "Hotel", area: "Sukhumvit", nightly: 4200, rating: 4.6 }
+      ] },
+    { id: "kanchanaburi", title: "River Kwai & Erawan Falls", country: "Thailand", region: "Kanchanaburi", days: 3, rating: 4.6, price: 5500, type: "Adventure", grad: "kanchanaburi", tags: ["Waterfalls", "History"], blurb: "The Bridge on the River Kwai, the Death Railway, and Erawan's seven-tier falls.",
+      stays: [
+        { name: "The Float House River Kwai", kind: "Villa", area: "Floating, on the River Kwai", nightly: 6800, rating: 4.6 },
+        { name: "U Inchantree Kanchanaburi", kind: "Hotel", area: "Riverside, near the bridge", nightly: 2900, rating: 4.5 },
+        { name: "X2 River Kwai Resort", kind: "Resort", area: "Riverfront", nightly: 5600, rating: 4.5 }
+      ] },
+    { id: "samet", title: "Koh Samet Island Escape", country: "Thailand", region: "Rayong", days: 3, rating: 4.3, price: 5800, type: "Beach", grad: "samet", tags: ["White sand", "Snorkelling"], blurb: "The closest white-sand island to Bangkok — powder beaches and clear water.",
+      stays: [
+        { name: "Sai Kaew Beach Resort", kind: "Resort", area: "Sai Kaew Beach", nightly: 3400, rating: 4.3 },
+        { name: "Ao Prao Resort", kind: "Resort", area: "Ao Prao (sunset side)", nightly: 4200, rating: 4.4 },
+        { name: "Paradee Resort", kind: "Resort", area: "Quiet south end", nightly: 7800, rating: 4.6 }
+      ] },
+    { id: "huahin", title: "Hua Hin Seaside Weekend", country: "Thailand", region: "Prachuap Khiri Khan", days: 3, rating: 4.7, price: 6500, type: "Beach", grad: "huahin", tags: ["Beach", "Night markets"], blurb: "A relaxed royal beach town — long sands, night markets and a water park.",
+      stays: [
+        { name: "Holiday Inn Resort Vana Nava Hua Hin", kind: "Resort", area: "Near Vana Nava water park", nightly: 4500, rating: 4.5 },
+        { name: "Centara Grand Beach Resort & Villas Hua Hin", kind: "Resort", area: "On the beach", nightly: 6200, rating: 4.6 },
+        { name: "InterContinental Hua Hin Resort", kind: "Resort", area: "Beachfront", nightly: 5400, rating: 4.7 }
+      ] },
+    { id: "chiangmai", title: "Chiang Mai City & Temples", country: "Thailand", region: "Chiang Mai", days: 3, rating: 4.7, price: 7900, type: "City", grad: "chiangmai", tags: ["Temples", "Mountains"], blurb: "Old-city temples, Nimman cafés and Doi Suthep above the northern capital.",
+      stays: [
+        { name: "Shangri-La Chiang Mai", kind: "Hotel", area: "Near the Night Bazaar", nightly: 5200, rating: 4.7 },
+        { name: "U Nimman Chiang Mai", kind: "Hotel", area: "Nimmanhaemin", nightly: 3800, rating: 4.6 },
+        { name: "Anantara Chiang Mai Resort", kind: "Resort", area: "Riverside", nightly: 6900, rating: 4.7 }
+      ] },
+    { id: "khaoyai", title: "Khao Yai Nature & Wineries", country: "Thailand", region: "Nakhon Ratchasima", days: 3, rating: 4.8, price: 8900, type: "Adventure", grad: "khaoyai", tags: ["National park", "Vineyards"], blurb: "Thailand's oldest national park, waterfalls and wine country, cool-air cafés.",
+      stays: [
+        { name: "InterContinental Khao Yai Resort", kind: "Resort", area: "Pak Chong", nightly: 9500, rating: 4.8 },
+        { name: "Kirimaya Golf Resort & Spa", kind: "Resort", area: "By the national park", nightly: 6400, rating: 4.5 },
+        { name: "Pool villa near Toscana (representative)", kind: "Villa", area: "Khao Yai valley", nightly: 3900, rating: 4.3 }
+      ] }
   ];
 
   GOGO.getTrip = function (id) {
@@ -42,84 +89,76 @@
   };
 
   /* ---- shared detail fragments ------------------------------------------ */
-  var INCLUDED = ["Boutique stays, every night", "Daily breakfast", "Private airport transfers", "A local guide on the key days", "24/7 support before and during"];
-  var NOT_INCLUDED = ["International flights", "Travel insurance", "Some lunches & dinners"];
+  var INCLUDED = ["2 nights at your chosen stay", "Return transfers from Bangkok", "Daily breakfast", "A local guide on day trips", "24/7 support before and during"];
+  var NOT_INCLUDED = ["Flights (Chiang Mai trips)", "Travel insurance", "Some lunches & dinners"];
   var REVIEWS = [
-    { who: "Maya R.", when: "Travelled recently", initials: "MR", grad: "bali", text: "Perfectly paced and zero logistics stress. Our guide knew exactly when to beat the crowds." },
-    { who: "Jordan L.", when: "Travelled recently", initials: "JL", grad: "lisbon", text: "The stays were lovely and the price really was the price — no surprise fees. Would book again." }
+    { who: "Ploy S.", when: "Travelled recently", initials: "PS", grad: "huahin", text: "Perfectly paced weekend and zero logistics stress — the transfers from Bangkok were on time both ways." },
+    { who: "Nattapong K.", when: "Travelled recently", initials: "NK", grad: "khaoyai", text: "The stay was lovely and the price really was the price. Great for a quick escape from the city." }
   ];
 
   /* ---- rich details for featured trips ---------------------------------- */
   GOGO.details = {
-    bali: {
+    huahin: {
       gallery: [
-        { bg: "linear-gradient(150deg,#12B39B,#0E7CA8 60%,#F2B33C)", cap: "Nusa Penida coast" },
-        { bg: "linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B)", cap: "Ubud temples" },
-        { bg: "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52)", cap: "Tegallalang rice terraces" },
-        { bg: "linear-gradient(160deg,#FFC24B,#FF6A3D 50%,#C4326B)", cap: "Uluwatu sunset" },
-        { bg: "linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A)", cap: "Island aerial" }
+        { bg: "linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A)", cap: "Hua Hin beach" },
+        { bg: "linear-gradient(160deg,#FFC24B,#FF6A3D 50%,#C4326B)", cap: "Cicada night market" },
+        { bg: "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52)", cap: "Monsoon Valley vineyard" },
+        { bg: "linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E)", cap: "Vana Nava water park" },
+        { bg: "linear-gradient(150deg,#12B39B,#0E7CA8 60%,#F2B33C)", cap: "Sam Roi Yot" }
       ],
       itinerary: [
-        { d: 1, t: "Arrive in Bali · settle in Ubud", text: "Airport pickup and a scenic transfer to your rice-paddy villa near Ubud. Welcome dinner in the evening." },
-        { d: 2, t: "Ubud culture & terraces", text: "Sacred Monkey Forest, a working art village, and the Tegallalang rice terraces at golden hour." },
-        { d: 3, t: "Waterfalls & hidden temples", text: "Jungle waterfalls in the morning, then the water temple at Tirta Empul before a slow valley lunch." },
-        { d: 4, t: "Boat to Nusa Penida", text: "Fast boat across for Kelingking viewpoint and an afternoon snorkel with manta rays (season permitting)." },
-        { d: 5, t: "Nusa Lembongan", text: "Mangrove kayaking, the Yellow Bridge and easy beach time. Sunset from a clifftop warung." },
-        { d: 6, t: "Uluwatu & the south", text: "The Uluwatu clifftop temple, a Kecak fire dance, and fresh seafood on the sand at Jimbaran." },
-        { d: 7, t: "Departure", text: "A relaxed breakfast and transfer to the airport — or extend your stay, we can help arrange it." }
+        { d: 1, t: "Arrive in Hua Hin", text: "Transfer down from Bangkok, check in, and an evening at the Cicada artsy night market." },
+        { d: 2, t: "Beach & water park", text: "Morning on the sand, an afternoon at Vana Nava water park, then seafood at the Hua Hin night market." },
+        { d: 3, t: "Vineyard & departure", text: "Brunch at Monsoon Valley vineyard (or Sam Roi Yot caves), then the transfer back to Bangkok." }
       ],
       included: INCLUDED, notIncluded: NOT_INCLUDED, reviews: REVIEWS
     },
-    kyoto: {
+    khaoyai: {
       gallery: [
-        { bg: "linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E)", cap: "Fushimi Inari gates" },
-        { bg: "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52)", cap: "Arashiyama bamboo" },
-        { bg: "linear-gradient(160deg,#FFC24B,#FF6A3D 50%,#C4326B)", cap: "Gion at dusk" },
-        { bg: "linear-gradient(150deg,#6FC7E8,#2C7FC4 58%,#243B7A)", cap: "Kinkaku-ji" },
-        { bg: "linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B)", cap: "Tea house lane" }
+        { bg: "linear-gradient(150deg,#8FD9A0,#3E9C6C 55%,#215E3E)", cap: "Khao Yai National Park" },
+        { bg: "linear-gradient(150deg,#6FC7E8,#2C7FC4 58%,#243B7A)", cap: "Haew Suwat waterfall" },
+        { bg: "linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#3AA6C4)", cap: "Hillside vineyard" },
+        { bg: "linear-gradient(160deg,#FFC24B,#FF6A3D 50%,#C4326B)", cap: "Farm café at dusk" },
+        { bg: "linear-gradient(150deg,#A7D98F,#3E9CC4 55%,#2F5E7E)", cap: "Forest viewpoint" }
       ],
       itinerary: [
-        { d: 1, t: "Arrive in Kyoto", text: "Transfer to a machiya townhouse near the river. Evening stroll through the Pontocho lanes." },
-        { d: 2, t: "Southern shrines", text: "The thousand vermilion gates of Fushimi Inari early, then Tofuku-ji and a kaiseki lunch." },
-        { d: 3, t: "Arashiyama", text: "Bamboo grove, the Katsura river, and a monkey park with a view over the whole city." },
-        { d: 4, t: "Temples & tea", text: "Kinkaku-ji, a guided matcha ceremony, and free time in the Nishiki market." },
-        { d: 5, t: "Departure", text: "Morning in the Gion district, then transfer for onward travel." }
+        { d: 1, t: "Drive to Khao Yai", text: "Head northeast to the hills, a tasting at PB Valley or GranMonte winery, then check in." },
+        { d: 2, t: "National park day", text: "Into Thailand's oldest national park — Haew Suwat and Haew Narok falls, wildlife and viewpoints." },
+        { d: 3, t: "Farm cafés & departure", text: "A slow morning around the design cafés and farms, then the transfer back to Bangkok." }
       ],
       included: INCLUDED, notIncluded: NOT_INCLUDED, reviews: REVIEWS
     },
-    patagonia: {
+    kanchanaburi: {
       gallery: [
-        { bg: "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#3B4E9E)", cap: "Torres del Paine" },
-        { bg: "linear-gradient(150deg,#6FC7E8,#2C7FC4 58%,#243B7A)", cap: "Grey Glacier" },
-        { bg: "linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#3AA6C4)", cap: "Patagonian steppe" },
-        { bg: "linear-gradient(150deg,#12B39B,#0E7CA8 60%,#F2B33C)", cap: "Valley trail" },
-        { bg: "linear-gradient(160deg,#FFC24B,#FF6A3D 50%,#C4326B)", cap: "Camp at dawn" }
+        { bg: "linear-gradient(150deg,#A7D98F,#3E9CC4 55%,#2F5E7E)", cap: "River Kwai" },
+        { bg: "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52)", cap: "Erawan Falls" },
+        { bg: "linear-gradient(160deg,#F2A65A,#E0533B 55%,#8E2D6B)", cap: "The Death Railway" },
+        { bg: "linear-gradient(150deg,#6FC7E8,#2C7FC4 58%,#243B7A)", cap: "Floating villa" },
+        { bg: "linear-gradient(150deg,#12B39B,#0E7CA8 60%,#F2B33C)", cap: "Sai Yok" }
       ],
       itinerary: [
-        { d: 1, t: "Arrive in Punta Arenas", text: "Meet the group and transfer north toward the park. First night under big Patagonian skies." },
-        { d: 2, t: "Base of the Towers", text: "The classic day hike to the granite towers and their glacial lake." },
-        { d: 3, t: "French Valley", text: "Into the heart of the W circuit, with hanging glaciers on every side." },
-        { d: 4, t: "Grey Glacier", text: "A boat to the glacier face, then an easy shoreline walk among the icebergs." },
-        { d: 5, t: "Rest & steppe wildlife", text: "A slower day: guanacos, condors, and time to recover before the long crossings." }
+        { d: 1, t: "Bridge on the River Kwai", text: "Transfer from Bangkok, the WWII bridge and museum, then a ride on the historic Death Railway." },
+        { d: 2, t: "Erawan Falls", text: "A full day at the seven-tier Erawan waterfall, with time to swim, plus Hellfire Pass." },
+        { d: 3, t: "River morning & departure", text: "Kayaking or an ethical elephant visit, a floating lunch, then the drive back." }
       ],
       included: INCLUDED, notIncluded: NOT_INCLUDED, reviews: REVIEWS
     }
   };
 
-  /* Build a full detail object for ANY trip (rich if featured, else a sensible fallback). */
+  /* Build a full detail object for ANY trip (rich if featured, else fallback). */
   GOGO.buildDetail = function (trip) {
     if (GOGO.details[trip.id]) return GOGO.details[trip.id];
     var base = GOGO.gradCss(trip.grad);
     var gallery = [
       { bg: base, cap: trip.region + " views" },
-      { bg: "linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#3AA6C4)", cap: "On the trip" },
+      { bg: "linear-gradient(160deg,#FFC24B,#FF6A3D 50%,#C4326B)", cap: "On the trip" },
       { bg: "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52)", cap: "Local life" }
     ];
     var itinerary = [];
     for (var d = 1; d <= trip.days; d++) {
-      if (d === 1) itinerary.push({ d: d, t: "Arrive in " + trip.region, text: "Airport pickup, check in, and a relaxed evening to settle in." });
-      else if (d === trip.days) itinerary.push({ d: d, t: "Departure", text: "A final breakfast and transfer for onward travel." });
-      else itinerary.push({ d: d, t: "Explore " + trip.region, text: "A guided day through the highlights, with free time to wander at your own pace." });
+      if (d === 1) itinerary.push({ d: d, t: "Arrive in " + trip.region, text: "Transfer from Bangkok, check in, and a relaxed first evening to settle in." });
+      else if (d === trip.days) itinerary.push({ d: d, t: "Departure", text: "A final morning at your own pace, then the transfer back to Bangkok." });
+      else itinerary.push({ d: d, t: "Explore " + trip.region, text: "A guided day through the highlights, with free time to wander." });
     }
     return { gallery: gallery, itinerary: itinerary, included: INCLUDED, notIncluded: NOT_INCLUDED, reviews: REVIEWS };
   };
@@ -127,9 +166,7 @@
   /* ---- wishlist (localStorage, per-viewer) ------------------------------- */
   var WKEY = "gogo:wishlist";
   GOGO.wish = {
-    get: function () {
-      try { return JSON.parse(localStorage.getItem(WKEY) || "[]"); } catch (e) { return []; }
-    },
+    get: function () { try { return JSON.parse(localStorage.getItem(WKEY) || "[]"); } catch (e) { return []; } },
     has: function (id) { return this.get().indexOf(id) !== -1; },
     toggle: function (id) {
       var list = this.get(), i = list.indexOf(id);
@@ -156,6 +193,7 @@
     shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>',
     calendar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>',
     list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>',
-    map: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>'
+    map: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>',
+    bed: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 14h18M3 18v2M21 18v2M7 10V8a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2"/></svg>'
   };
 })();

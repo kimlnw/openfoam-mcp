@@ -127,15 +127,15 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 
 /* ---- Destination "photo" gradients (placeholders for real imagery) ------- */
 .ph { position: relative; background: var(--inset); }
-.ph--bali { background: linear-gradient(150deg,#12B39B,#0E7CA8 60%,#F2B33C); }
-.ph--kyoto { background: linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E); }
-.ph--lisbon { background: linear-gradient(150deg,#FFB13C,#FF6A3D 55%,#E23E6B); }
-.ph--fjords { background: linear-gradient(150deg,#6FC7E8,#2C7FC4 58%,#243B7A); }
-.ph--patagonia { background: linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#3B4E9E); }
-.ph--amalfi { background: linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#3AA6C4); }
-.ph--marrakech { background: linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B); }
-.ph--porto { background: linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#3B7E9E); }
-.ph--crete { background: linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A); }
+.ph--pattaya { background: linear-gradient(150deg,#FFB13C,#FF6A3D 55%,#E23E6B); }
+.ph--huahin { background: linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A); }
+.ph--samet { background: linear-gradient(150deg,#12B39B,#0E9BB0 60%,#F2B33C); }
+.ph--ayutthaya { background: linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B); }
+.ph--amphawa { background: linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52); }
+.ph--chiangmai { background: linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E); }
+.ph--kanchanaburi { background: linear-gradient(150deg,#A7D98F,#3E9CC4 55%,#2F5E7E); }
+.ph--khaoyai { background: linear-gradient(150deg,#8FD9A0,#3E9C6C 55%,#215E3E); }
+.ph--bangkok { background: linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#8E2D6B); }
 
 /* ---- Trip card ----------------------------------------------------------- */
 .tcard { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; color: inherit; }
@@ -390,3 +390,19 @@ input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 
 .plan-banner__scrim { position: absolute; inset: 0; background: linear-gradient(180deg,transparent 40%,rgba(10,8,30,.35)); }
 .other-fit { display: flex; align-items: center; gap: 15px; padding: 12px 16px; }
 .other-fit__sw { width: 58px; height: 58px; border-radius: 12px; flex: none; }
+
+/* ---- Where you'll stay (accommodations) ---------------------------------- */
+.stays { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; }
+.stay { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.stay__ic { flex: none; width: 42px; height: 42px; border-radius: 11px; background: var(--red-soft); color: var(--red); display: grid; place-items: center; }
+.stay__ic svg { width: 22px; height: 22px; }
+.stay__main { flex: 1; min-width: 0; }
+.stay__name { font-weight: 800; font-size: .98rem; }
+.stay__name .stay__kind { font-weight: 700; font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); background: var(--inset); border: 1px solid var(--line); padding: 3px 8px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
+.stay__meta { font-size: .82rem; color: var(--ink-soft); margin-top: 3px; display: flex; align-items: center; gap: 6px; }
+.stay__meta .star { display: inline-flex; width: 13px; height: 13px; color: var(--gold); }
+.stay__price { text-align: right; flex: none; }
+.stay__price b { font-weight: 800; font-size: 1rem; }
+.stay__price span { display: block; font-size: .72rem; color: var(--faint); }
+.stays__note { font-size: .8rem; color: var(--faint); margin-top: 12px; }
+@media (max-width: 480px) { .stay { flex-wrap: wrap; } .stay__price { text-align: left; } }

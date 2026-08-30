@@ -6,7 +6,7 @@
   "use strict";
   var GOGO = window.GOGO, money = GOGO.money, $ = function (id) { return document.getElementById(id); };
 
-  var st = { budget: 3000, persons: 2, nights: 7, style: "Any", selectedId: "" };
+  var st = { budget: 20000, persons: 2, nights: 3, style: "Any", selectedId: "" };
   var STYLES = ["Any", "Beach", "City", "Adventure", "Cultural"];
   var PARTS = [
     { label: "Stays & rooms", pct: 0.42, color: "var(--red)" },
@@ -38,9 +38,9 @@
   $("pInc").addEventListener("click", function () { st.persons = Math.min(12, st.persons + 1); st.selectedId = ""; render(); });
 
   function tracks() {
-    var bp = Math.round((st.budget - 500) / 9500 * 100);
+    var bp = Math.round((st.budget - 5000) / 95000 * 100);
     $("budgetRange").style.background = "linear-gradient(90deg,var(--red) 0%,var(--red) " + bp + "%,var(--line) " + bp + "%,var(--line) 100%)";
-    var np = Math.round((st.nights - 2) / 12 * 100);
+    var np = Math.round((st.nights - 2) / 8 * 100);
     $("nightsRange").style.background = "linear-gradient(90deg,var(--red) 0%,var(--red) " + np + "%,var(--line) " + np + "%,var(--line) 100%)";
     $("budgetVal").textContent = money(st.budget);
     $("perPerson").textContent = money(st.budget / st.persons) + " / person";
@@ -77,7 +77,7 @@
           '<p style="font-size:.94rem;color:var(--ink-soft);margin:8px auto 0;max-width:46ch">The most affordable ' + styleWord + "trip for " + st.persons + (st.persons === 1 ? " traveler" : " travelers") + ' is <b>' + money(cg) + "</b>. Raise your budget, drop a traveller, or widen the style.</p>" +
           '<button class="btn btn--primary" type="button" id="setCheapest" style="margin-top:18px">Set budget to ' + money(cg) + "</button></div>";
       var sc = $("setCheapest");
-      if (sc) sc.addEventListener("click", function () { st.budget = Math.min(10000, cg); $("budgetRange").value = st.budget; render(); });
+      if (sc) sc.addEventListener("click", function () { st.budget = Math.min(100000, cg); $("budgetRange").value = st.budget; render(); });
       return;
     }
 

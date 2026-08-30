@@ -69,7 +69,13 @@ gogo-travel/
   `site.js`, then its own page script.
 - Trip prices are **per person**; the planner works in **group totals**
   (price × travellers).
-- Content (trips, prices, itineraries, reviews) is **sample data** to make the
-  UI real — replace it with your catalogue and a real booking backend.
+- Trips are **Thailand weekend getaways**. Destinations and hotel names (in each
+  trip's `stays`) are **real places**, but nightly rates, prices and ratings are
+  **representative sample values** for the demo. For live figures, wire `stays`
+  and prices to an **Agoda** or **Trip.com** partner/affiliate API (needs an
+  account + a small backend proxy) — direct scraping of those sites isn't
+  permitted and their content changes constantly.
+- Other content (itineraries, reviews) is sample data too — replace it with your
+  catalogue and a real booking backend.
 - Auth, payments and a live search API are intentionally not included — the
   "Sign up", "Book now" and form actions are front-end stubs ready to wire up.

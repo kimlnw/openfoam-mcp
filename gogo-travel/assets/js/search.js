@@ -5,7 +5,7 @@
   "use strict";
   var GOGO = window.GOGO, money = GOGO.money, $ = function (id) { return document.getElementById(id); };
 
-  var state = { maxPrice: 3000, types: {}, duration: "Any", minRating: false, sort: "rec", view: "list" };
+  var state = { maxPrice: 10000, types: {}, duration: "Any", minRating: false, sort: "rec", view: "list" };
 
   /* ---- header from query ------------------------------------------------- */
   var p = GOGO.params();
@@ -14,12 +14,12 @@
 
   /* ---- filter data ------------------------------------------------------- */
   var TYPES = ["Beach", "City", "Adventure", "Cultural"];
-  var DURS = ["Any", "1–5 days", "6–9 days", "10+ days"];
+  var DURS = ["Any", "2 days", "3 days", "4+ days"];
   function inDur(days, d) {
     if (d === "Any") return true;
-    if (d === "1–5 days") return days <= 5;
-    if (d === "6–9 days") return days >= 6 && days <= 9;
-    return days >= 10;
+    if (d === "2 days") return days === 2;
+    if (d === "3 days") return days === 3;
+    return days >= 4;
   }
   function filtered() {
     var anyType = Object.keys(state.types).length > 0;
@@ -48,7 +48,7 @@
   $("ratingChip").innerHTML = '<button class="pill" type="button" id="ratingBtn" style="display:inline-flex;align-items:center;gap:6px"><span style="display:inline-flex;width:14px;height:14px">' + GOGO.svg("star", 14) + "</span>4.8 &amp; up</button>";
 
   function setTrack() {
-    var pct = Math.round((state.maxPrice - 500) / 2500 * 100);
+    var pct = Math.round((state.maxPrice - 2000) / 8000 * 100);
     $("priceRange").style.background = "linear-gradient(90deg,var(--red) 0%,var(--red) " + pct + "%,var(--line) " + pct + "%,var(--line) 100%)";
     $("priceVal").textContent = money(state.maxPrice);
   }
@@ -134,8 +134,8 @@
   });
 
   function clearAll() {
-    state.maxPrice = 3000; state.types = {}; state.duration = "Any"; state.minRating = false;
-    $("priceRange").value = 3000;
+    state.maxPrice = 10000; state.types = {}; state.duration = "Any"; state.minRating = false;
+    $("priceRange").value = 10000;
     $("typeChips").querySelectorAll(".pill").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
     $("durChips").querySelectorAll(".pill").forEach(function (x) { x.setAttribute("aria-pressed", x.getAttribute("data-dur") === "Any" ? "true" : "false"); });
     $("ratingBtn").setAttribute("aria-pressed", "false");

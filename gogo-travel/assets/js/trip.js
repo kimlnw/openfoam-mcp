@@ -14,7 +14,7 @@
   var detail = GOGO.buildDetail(trip);
 
   var st = { img: 0, tab: "overview", openDay: 1, travelers: 2, dateIndex: 0 };
-  var DATES = ["12–19 Mar 2026", "2–9 Apr 2026", "7–14 May 2026"];
+  var DATES = ["Fri 13 – Sun 15 Mar", "Sat 21 – Mon 23 Mar", "Fri 4 – Sun 6 Apr"];
 
   document.title = trip.title + " — GOGO!";
 
@@ -71,6 +71,16 @@
   function inclRow(text, yes) {
     return '<span class="incl-row ' + (yes ? "yes" : "no") + '">' + GOGO.svg(yes ? "check" : "x", 19) + "<span>" + text + "</span></span>";
   }
+  var staysBlock =
+    '<h3 style="font-size:1.15rem;margin:30px 0 4px">Where you’ll stay</h3>' +
+    '<div class="stays">' + (trip.stays || []).map(function (s) {
+      return '<div class="stay"><div class="stay__ic">' + GOGO.svg("bed", 22) + "</div>" +
+        '<div class="stay__main"><div class="stay__name">' + s.name + '<span class="stay__kind">' + s.kind + "</span></div>" +
+        '<div class="stay__meta"><span class="star">' + GOGO.svg("star", 13) + "</span>" + s.rating + " · " + s.area + "</div></div>" +
+        '<div class="stay__price"><b>' + money(s.nightly) + "</b><span>/ night</span></div></div>";
+    }).join("") + "</div>" +
+    '<p class="stays__note">Sample nightly rates for the demo — confirm live prices with your booking partner.</p>';
+
   $("panel-overview").innerHTML =
     '<p style="font-size:1.05rem;color:#2B3040">' + trip.blurb + "</p>" +
     '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px">' +
@@ -78,6 +88,7 @@
         return '<span style="font-size:.82rem;font-weight:700;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);padding:7px 13px;border-radius:999px">' + tg + "</span>";
       }).join("") +
     "</div>" +
+    staysBlock +
     '<div class="incl-grid">' +
       '<div><h3 style="font-size:1.15rem;margin-bottom:14px">What’s included</h3><div class="incl">' + detail.included.map(function (t) { return inclRow(t, true); }).join("") + "</div></div>" +
       '<div><h3 style="font-size:1.15rem;margin-bottom:14px">Not included</h3><div class="incl">' + detail.notIncluded.map(function (t) { return inclRow(t, false); }).join("") + "</div></div>" +
