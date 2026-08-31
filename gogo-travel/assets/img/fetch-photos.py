@@ -24,12 +24,14 @@ Then, to see the photos:
 Standard library only — no pip installs. Re-run any time to refresh. Prefer your
 own photos? Just drop <id>.jpg files here with these names and skip the script.
 """
-import json, os, re, urllib.parse, urllib.request
+import json, os, re, time, urllib.error, urllib.parse, urllib.request
 
 WIDTH = 1400
 MIN_W = 900
-UA = "GOGO-Travel-demo/1.0 (educational sample site)"
+# Wikimedia asks for a descriptive User-Agent with a contact URL.
+UA = "GOGOTravelDemo/1.0 (https://github.com/kimlnw/openfoam-mcp; educational sample site) Python-urllib"
 API = "https://commons.wikimedia.org/w/api.php"
+PAUSE = 1.2  # polite delay between destinations, to stay under rate limits
 
 # id -> ordered list of Commons search terms (iconic, well-photographed, and
 # specific to the place). The first term that returns a good landscape photo
@@ -68,10 +70,27 @@ QUERIES = {
 }
 
 
-def get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=45) as r:
-        return r.read()
+def get(url, tries=5):
+    """GET with retry + backoff, honoring Retry-After on 429/503."""
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 503) and i < tries - 1:
+                try:
+                    ra = int(e.headers.get("Retry-After", "0"))
+                except Exception:
+                    ra = 0
+                time.sleep(min(max(ra, 2 ** i + 1), 30))
+                continue
+            raise
+        except urllib.error.URLError:
+            if i < tries - 1:
+                time.sleep(2 ** i + 1)
+                continue
+            raise
 
 
 def strip_html(s):
@@ -138,13 +157,20 @@ def main():
             if not img:
                 print("  ! no result for", tid)
                 continue
+            data = get(img["thumb"])              # download FIRST; only write on success
             with open(os.path.join(here, tid + ".jpg"), "wb") as f:
-                f.write(get(img["thumb"]))
+                f.write(data)
             credits.append("- **%s.jpg** — %s · %s · %s" % (tid, img["artist"], img["license"], img["page"]))
             print("  ✓ %s.jpg  (%s)  [%s]" % (tid, img["license"], img["term"]))
             ok += 1
         except Exception as e:
             print("  ! failed", tid, "-", e)
+        time.sleep(PAUSE)
+    # drop any empty/partial files (e.g. from an earlier interrupted run)
+    for f in os.listdir(here):
+        if f.endswith(".jpg") and os.path.getsize(os.path.join(here, f)) < 1000:
+            os.remove(os.path.join(here, f))
+            print("  – removed empty", f)
     with open(os.path.join(here, "CREDITS.md"), "w") as f:
         f.write("\n".join(credits) + "\n")
     print("\nDone: %d/%d photos. Wrote CREDITS.md." % (ok, len(QUERIES)))

@@ -26,7 +26,7 @@ IMGDIR = ROOT / "assets/img"
 import base64, io
 def _data_uri(fid):
     p = IMGDIR / (fid + ".jpg")
-    if not p.exists():
+    if not p.exists() or p.stat().st_size < 1000:   # skip missing/empty/partial
         return None
     try:
         from PIL import Image
