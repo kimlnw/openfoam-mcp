@@ -129,10 +129,7 @@ router_js = r"""
       if (root && TRIP_TEMPLATE != null) root.innerHTML = TRIP_TEMPLATE;
       GOGO._runTrip(r.params.get("id"));
     }
-    if (path === "search") {
-      var dest = r.params.get("dest"), t = document.getElementById("results-title");
-      if (t) t.textContent = dest ? ("Trips in " + dest) : "All trips";
-    }
+    if (path === "search" && GOGO.searchSetDest) GOGO.searchSetDest(r.params.get("dest"));
     setActiveNav(path);
     var active = document.querySelector('[data-route="' + path + '"]');
     if (active) active.querySelectorAll(".reveal").forEach(function (e) { e.classList.add("in"); });

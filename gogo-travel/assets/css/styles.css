@@ -131,15 +131,36 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .ph { position: relative; background: var(--inset); }
 /* Each destination layers a real photo (assets/img/<id>.jpg) over a muted gradient.
    No photo yet? The image layer 404s harmlessly and the gradient shows through. */
-.ph--pattaya { background: url('../img/pattaya.jpg') center/cover no-repeat, linear-gradient(155deg,#C6A15E,#7C5A3A 58%,#332723); }
-.ph--huahin { background: url('../img/huahin.jpg') center/cover no-repeat, linear-gradient(155deg,#6E9B98,#2E5A5E 58%,#22343A); }
-.ph--samet { background: url('../img/samet.jpg') center/cover no-repeat, linear-gradient(155deg,#5E907A,#2E6157 60%,#20342E); }
-.ph--ayutthaya { background: url('../img/ayutthaya.jpg') center/cover no-repeat, linear-gradient(155deg,#C0904E,#7A3E4A 55%,#2E2026); }
 .ph--amphawa { background: url('../img/amphawa.jpg') center/cover no-repeat, linear-gradient(155deg,#8A9A6E,#4E6B57 55%,#262E28); }
-.ph--chiangmai { background: url('../img/chiangmai.jpg') center/cover no-repeat, linear-gradient(155deg,#9A6E86,#5E3E5A 60%,#241E2A); }
-.ph--kanchanaburi { background: url('../img/kanchanaburi.jpg') center/cover no-repeat, linear-gradient(155deg,#7E9A6E,#3E6B57 55%,#22322A); }
-.ph--khaoyai { background: url('../img/khaoyai.jpg') center/cover no-repeat, linear-gradient(155deg,#6E9A72,#2E6147 55%,#1E2E24); }
+.ph--ayutthaya { background: url('../img/ayutthaya.jpg') center/cover no-repeat, linear-gradient(155deg,#C0904E,#7A3E4A 55%,#2E2026); }
+.ph--pattaya { background: url('../img/pattaya.jpg') center/cover no-repeat, linear-gradient(155deg,#C6A15E,#7C5A3A 58%,#332723); }
 .ph--bangkok { background: url('../img/bangkok.jpg') center/cover no-repeat, linear-gradient(155deg,#C6A15E,#7A3E4A 55%,#241C22); }
+.ph--kanchanaburi { background: url('../img/kanchanaburi.jpg') center/cover no-repeat, linear-gradient(155deg,#7E9A6E,#3E6B57 55%,#22322A); }
+.ph--samet { background: url('../img/samet.jpg') center/cover no-repeat, linear-gradient(155deg,#5E907A,#2E6157 60%,#20342E); }
+.ph--huahin { background: url('../img/huahin.jpg') center/cover no-repeat, linear-gradient(155deg,#6E9B98,#2E5A5E 58%,#22343A); }
+.ph--chiangmai { background: url('../img/chiangmai.jpg') center/cover no-repeat, linear-gradient(155deg,#9A6E86,#5E3E5A 60%,#241E2A); }
+.ph--khaoyai { background: url('../img/khaoyai.jpg') center/cover no-repeat, linear-gradient(155deg,#6E9A72,#2E6147 55%,#1E2E24); }
+.ph--lopburi { background: url('../img/lopburi.jpg') center/cover no-repeat, linear-gradient(155deg,#BFA05A,#773139 56%,#331920); }
+.ph--kohchang { background: url('../img/kohchang.jpg') center/cover no-repeat, linear-gradient(155deg,#67A7AD,#326976 58%,#1D3639); }
+.ph--kohkood { background: url('../img/kohkood.jpg') center/cover no-repeat, linear-gradient(155deg,#67ADA8,#327476 58%,#1D3939); }
+.ph--chanthaburi { background: url('../img/chanthaburi.jpg') center/cover no-repeat, linear-gradient(155deg,#BF9B5A,#77313C 56%,#331920); }
+.ph--chiangrai { background: url('../img/chiangrai.jpg') center/cover no-repeat, linear-gradient(155deg,#BF955A,#77313F 56%,#331920); }
+.ph--pai { background: url('../img/pai.jpg') center/cover no-repeat, linear-gradient(155deg,#59A678,#316850 55%,#1B3226); }
+.ph--nan { background: url('../img/nan.jpg') center/cover no-repeat, linear-gradient(155deg,#BF965A,#77313E 56%,#331920); }
+.ph--sukhothai { background: url('../img/sukhothai.jpg') center/cover no-repeat, linear-gradient(155deg,#BF9E5A,#77313A 56%,#331920); }
+.ph--ubon { background: url('../img/ubon.jpg') center/cover no-repeat, linear-gradient(155deg,#59A66F,#31684A 55%,#1B3226); }
+.ph--chiangkhan { background: url('../img/chiangkhan.jpg') center/cover no-repeat, linear-gradient(155deg,#BF9F5A,#77313A 56%,#331920); }
+.ph--samui { background: url('../img/samui.jpg') center/cover no-repeat, linear-gradient(155deg,#67A8AD,#326B76 58%,#1D3639); }
+.ph--phangan { background: url('../img/phangan.jpg') center/cover no-repeat, linear-gradient(155deg,#67ADA7,#327576 58%,#1D3938); }
+.ph--kohtao { background: url('../img/kohtao.jpg') center/cover no-repeat, linear-gradient(155deg,#59A674,#31684D 55%,#1B3226); }
+.ph--khaosok { background: url('../img/khaosok.jpg') center/cover no-repeat, linear-gradient(155deg,#59A669,#316845 55%,#1B3226); }
+.ph--phuket { background: url('../img/phuket.jpg') center/cover no-repeat, linear-gradient(155deg,#67A4AD,#326676 58%,#1D3439); }
+.ph--krabi { background: url('../img/krabi.jpg') center/cover no-repeat, linear-gradient(155deg,#67ADAC,#327076 58%,#1D3839); }
+.ph--phiphi { background: url('../img/phiphi.jpg') center/cover no-repeat, linear-gradient(155deg,#67A1AD,#326476 58%,#1D3339); }
+.ph--phangnga { background: url('../img/phangnga.jpg') center/cover no-repeat, linear-gradient(155deg,#59A66E,#316849 55%,#1B3226); }
+.ph--kholanta { background: url('../img/kholanta.jpg') center/cover no-repeat, linear-gradient(155deg,#679FAD,#326276 58%,#1D3239); }
+.ph--khaolak { background: url('../img/khaolak.jpg') center/cover no-repeat, linear-gradient(155deg,#67A9AD,#326C76 58%,#1D3639); }
+.ph--lipe { background: url('../img/lipe.jpg') center/cover no-repeat, linear-gradient(155deg,#679CAD,#325F76 58%,#1D3139); }
 
 /* ---- Trip card ----------------------------------------------------------- */
 .tcard { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; color: inherit; }

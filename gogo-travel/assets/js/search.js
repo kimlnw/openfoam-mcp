@@ -5,12 +5,22 @@
   "use strict";
   var GOGO = window.GOGO, money = GOGO.money, $ = function (id) { return document.getElementById(id); };
 
-  var state = { maxPrice: 10000, types: {}, duration: "Any", minRating: false, sort: "rec", view: "list" };
+  var state = { dest: "", maxPrice: 10000, types: {}, duration: "Any", minRating: false, sort: "rec", view: "list" };
 
-  /* ---- header from query ------------------------------------------------- */
-  var p = GOGO.params();
-  var dest = p.get("dest");
-  if (dest) $("results-title").textContent = "Trips in " + dest;
+  /* ---- destination match (search a place -> show that place) ------------- */
+  function words(s) { return (s || "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\b(koh|ko)\b/g, " ").split(/\s+/).filter(Boolean); }
+  function destMatch(t, dest) {
+    var d = words(dest); if (!d.length) return true;
+    var set = {}; words(t.title + " " + t.region + " " + t.id + " " + t.country).forEach(function (w) { set[w] = 1; });
+    return d.every(function (tok) { return tok.length < 2 || set[tok] === 1; });   // whole-word, not substring
+  }
+  function setTitle() {
+    $("results-title").textContent = state.dest ? ("Trips in " + state.dest) : "All trips";
+  }
+
+  /* ---- header from query (multi-file site reads ?dest=...) --------------- */
+  state.dest = (GOGO.params().get("dest") || "").trim();
+  if (state.dest) setTitle();
 
   /* ---- filter data ------------------------------------------------------- */
   var TYPES = ["Beach", "City", "Adventure", "Cultural"];
@@ -24,6 +34,7 @@
   function filtered() {
     var anyType = Object.keys(state.types).length > 0;
     var list = GOGO.trips.filter(function (t) {
+      if (state.dest && !destMatch(t, state.dest)) return false;
       if (t.price > state.maxPrice) return false;
       if (anyType && !state.types[t.type]) return false;
       if (!inDur(t.days, state.duration)) return false;
@@ -84,7 +95,7 @@
 
   function render() {
     var list = filtered();
-    $("results-sub").innerHTML = "<b style=\"color:var(--ink)\">" + list.length + "</b> trips match your filters";
+    $("results-sub").innerHTML = "<b style=\"color:var(--ink)\">" + list.length + "</b>" + (list.length === 1 ? " trip matches" : " trips match") + " your filters";
     var area = $("resultsArea");
     if (state.view === "map") { area.innerHTML = mapView(list); return; }
     if (!list.length) {
@@ -142,6 +153,13 @@
     setTrack(); render();
   }
   $("clearFilters").addEventListener("click", clearAll);
+
+  /* ---- single-page hook: the router calls this when you land on search --- */
+  window.GOGO.searchSetDest = function (dest) {
+    state.dest = (dest || "").trim();
+    setTitle();
+    render();
+  };
 
   setTrack();
   render();

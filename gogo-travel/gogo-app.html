@@ -141,15 +141,36 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .ph { position: relative; background: var(--inset); }
 /* Each destination layers a real photo (assets/img/<id>.jpg) over a muted gradient.
    No photo yet? The image layer 404s harmlessly and the gradient shows through. */
-.ph--pattaya { background: linear-gradient(155deg,#C6A15E,#7C5A3A 58%,#332723); }
-.ph--huahin { background: linear-gradient(155deg,#6E9B98,#2E5A5E 58%,#22343A); }
-.ph--samet { background: linear-gradient(155deg,#5E907A,#2E6157 60%,#20342E); }
-.ph--ayutthaya { background: linear-gradient(155deg,#C0904E,#7A3E4A 55%,#2E2026); }
 .ph--amphawa { background: linear-gradient(155deg,#8A9A6E,#4E6B57 55%,#262E28); }
-.ph--chiangmai { background: linear-gradient(155deg,#9A6E86,#5E3E5A 60%,#241E2A); }
-.ph--kanchanaburi { background: linear-gradient(155deg,#7E9A6E,#3E6B57 55%,#22322A); }
-.ph--khaoyai { background: linear-gradient(155deg,#6E9A72,#2E6147 55%,#1E2E24); }
+.ph--ayutthaya { background: linear-gradient(155deg,#C0904E,#7A3E4A 55%,#2E2026); }
+.ph--pattaya { background: linear-gradient(155deg,#C6A15E,#7C5A3A 58%,#332723); }
 .ph--bangkok { background: linear-gradient(155deg,#C6A15E,#7A3E4A 55%,#241C22); }
+.ph--kanchanaburi { background: linear-gradient(155deg,#7E9A6E,#3E6B57 55%,#22322A); }
+.ph--samet { background: linear-gradient(155deg,#5E907A,#2E6157 60%,#20342E); }
+.ph--huahin { background: linear-gradient(155deg,#6E9B98,#2E5A5E 58%,#22343A); }
+.ph--chiangmai { background: linear-gradient(155deg,#9A6E86,#5E3E5A 60%,#241E2A); }
+.ph--khaoyai { background: linear-gradient(155deg,#6E9A72,#2E6147 55%,#1E2E24); }
+.ph--lopburi { background: linear-gradient(155deg,#BFA05A,#773139 56%,#331920); }
+.ph--kohchang { background: linear-gradient(155deg,#67A7AD,#326976 58%,#1D3639); }
+.ph--kohkood { background: linear-gradient(155deg,#67ADA8,#327476 58%,#1D3939); }
+.ph--chanthaburi { background: linear-gradient(155deg,#BF9B5A,#77313C 56%,#331920); }
+.ph--chiangrai { background: linear-gradient(155deg,#BF955A,#77313F 56%,#331920); }
+.ph--pai { background: linear-gradient(155deg,#59A678,#316850 55%,#1B3226); }
+.ph--nan { background: linear-gradient(155deg,#BF965A,#77313E 56%,#331920); }
+.ph--sukhothai { background: linear-gradient(155deg,#BF9E5A,#77313A 56%,#331920); }
+.ph--ubon { background: linear-gradient(155deg,#59A66F,#31684A 55%,#1B3226); }
+.ph--chiangkhan { background: linear-gradient(155deg,#BF9F5A,#77313A 56%,#331920); }
+.ph--samui { background: linear-gradient(155deg,#67A8AD,#326B76 58%,#1D3639); }
+.ph--phangan { background: linear-gradient(155deg,#67ADA7,#327576 58%,#1D3938); }
+.ph--kohtao { background: linear-gradient(155deg,#59A674,#31684D 55%,#1B3226); }
+.ph--khaosok { background: linear-gradient(155deg,#59A669,#316845 55%,#1B3226); }
+.ph--phuket { background: linear-gradient(155deg,#67A4AD,#326676 58%,#1D3439); }
+.ph--krabi { background: linear-gradient(155deg,#67ADAC,#327076 58%,#1D3839); }
+.ph--phiphi { background: linear-gradient(155deg,#67A1AD,#326476 58%,#1D3339); }
+.ph--phangnga { background: linear-gradient(155deg,#59A66E,#316849 55%,#1B3226); }
+.ph--kholanta { background: linear-gradient(155deg,#679FAD,#326276 58%,#1D3239); }
+.ph--khaolak { background: linear-gradient(155deg,#67A9AD,#326C76 58%,#1D3639); }
+.ph--lipe { background: linear-gradient(155deg,#679CAD,#325F76 58%,#1D3139); }
 
 /* ---- Trip card ----------------------------------------------------------- */
 .tcard { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; color: inherit; }
@@ -734,15 +755,36 @@ html{background:var(--bg)}
 
   /* ---- gradient "photo" strings (mirror the .ph--* CSS classes) ---------- */
   GOGO.grad = {
-    pattaya:      "linear-gradient(150deg,#FFB13C,#FF6A3D 55%,#E23E6B)",
-    huahin:       "linear-gradient(150deg,#6FD3E8,#2C9FC4 58%,#1E6C8A)",
-    samet:        "linear-gradient(150deg,#12B39B,#0E9BB0 60%,#F2B33C)",
-    ayutthaya:    "linear-gradient(150deg,#F2A65A,#E0533B 55%,#8E2D6B)",
-    amphawa:      "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52)",
-    chiangmai:    "linear-gradient(150deg,#F58FB0,#B65AC0 60%,#5B3E9E)",
-    kanchanaburi: "linear-gradient(150deg,#A7D98F,#3E9CC4 55%,#2F5E7E)",
-    khaoyai:      "linear-gradient(150deg,#8FD9A0,#3E9C6C 55%,#215E3E)",
-    bangkok:      "linear-gradient(150deg,#FFD36A,#FF8A3D 52%,#8E2D6B)"
+    amphawa: "linear-gradient(155deg,#8A9A6E,#4E6B57 55%,#262E28)",
+    ayutthaya: "linear-gradient(155deg,#C0904E,#7A3E4A 55%,#2E2026)",
+    pattaya: "linear-gradient(155deg,#C6A15E,#7C5A3A 58%,#332723)",
+    bangkok: "linear-gradient(155deg,#C6A15E,#7A3E4A 55%,#241C22)",
+    kanchanaburi: "linear-gradient(155deg,#7E9A6E,#3E6B57 55%,#22322A)",
+    samet: "linear-gradient(155deg,#5E907A,#2E6157 60%,#20342E)",
+    huahin: "linear-gradient(155deg,#6E9B98,#2E5A5E 58%,#22343A)",
+    chiangmai: "linear-gradient(155deg,#9A6E86,#5E3E5A 60%,#241E2A)",
+    khaoyai: "linear-gradient(155deg,#6E9A72,#2E6147 55%,#1E2E24)",
+    lopburi: "linear-gradient(155deg,#BFA05A,#773139 56%,#331920)",
+    kohchang: "linear-gradient(155deg,#67A7AD,#326976 58%,#1D3639)",
+    kohkood: "linear-gradient(155deg,#67ADA8,#327476 58%,#1D3939)",
+    chanthaburi: "linear-gradient(155deg,#BF9B5A,#77313C 56%,#331920)",
+    chiangrai: "linear-gradient(155deg,#BF955A,#77313F 56%,#331920)",
+    pai: "linear-gradient(155deg,#59A678,#316850 55%,#1B3226)",
+    nan: "linear-gradient(155deg,#BF965A,#77313E 56%,#331920)",
+    sukhothai: "linear-gradient(155deg,#BF9E5A,#77313A 56%,#331920)",
+    ubon: "linear-gradient(155deg,#59A66F,#31684A 55%,#1B3226)",
+    chiangkhan: "linear-gradient(155deg,#BF9F5A,#77313A 56%,#331920)",
+    samui: "linear-gradient(155deg,#67A8AD,#326B76 58%,#1D3639)",
+    phangan: "linear-gradient(155deg,#67ADA7,#327576 58%,#1D3938)",
+    kohtao: "linear-gradient(155deg,#59A674,#31684D 55%,#1B3226)",
+    khaosok: "linear-gradient(155deg,#59A669,#316845 55%,#1B3226)",
+    phuket: "linear-gradient(155deg,#67A4AD,#326676 58%,#1D3439)",
+    krabi: "linear-gradient(155deg,#67ADAC,#327076 58%,#1D3839)",
+    phiphi: "linear-gradient(155deg,#67A1AD,#326476 58%,#1D3339)",
+    phangnga: "linear-gradient(155deg,#59A66E,#316849 55%,#1B3226)",
+    kholanta: "linear-gradient(155deg,#679FAD,#326276 58%,#1D3239)",
+    khaolak: "linear-gradient(155deg,#67A9AD,#326C76 58%,#1D3639)",
+    lipe: "linear-gradient(155deg,#679CAD,#325F76 58%,#1D3139)"
   };
   GOGO.gradCss = function (name) { return GOGO.grad[name] || GOGO.grad.pattaya; };
 
@@ -801,6 +843,132 @@ html{background:var(--bg)}
         { name: "InterContinental Khao Yai Resort", kind: "Resort", area: "Pak Chong", nightly: 9500, rating: 4.8 },
         { name: "Kirimaya Golf Resort & Spa", kind: "Resort", area: "By the national park", nightly: 6400, rating: 4.5 },
         { name: "Pool villa near Toscana (representative)", kind: "Villa", area: "Khao Yai valley", nightly: 3900, rating: 4.3 }
+      ] },
+    { id: "lopburi", title: "Lopburi Monkey City & Sunflowers", country: "Thailand", region: "Lopburi", days: 2, rating: 4.2, price: 2600, type: "Cultural", grad: "lopburi", tags: ["Khmer ruins", "Monkeys"], blurb: "Khmer-era prangs overrun by monkeys, and sunflower fields in the cool season.",
+      stays: [
+        { name: "Lopburi Inn Resort", kind: "Hotel", area: "City edge", nightly: 1500, rating: 4.1 },
+        { name: "Noom Guesthouse", kind: "Guesthouse", area: "Old town", nightly: 700, rating: 4.2 },
+        { name: "Baan Krua Nara (representative)", kind: "Homestay", area: "Near Phra Prang Sam Yot", nightly: 950, rating: 4.2 }
+      ] },
+    { id: "kohchang", title: "Koh Chang Rainforest & Beaches", country: "Thailand", region: "Trat", days: 3, rating: 4.4, price: 6800, type: "Beach", grad: "kohchang", tags: ["Jungle", "White Sand Beach"], blurb: "Thailand's second-largest island — jungle waterfalls and long west-coast sands.",
+      stays: [
+        { name: "The Dewa Koh Chang", kind: "Resort", area: "Klong Prao Beach", nightly: 4200, rating: 4.4 },
+        { name: "Emerald Cove Koh Chang", kind: "Resort", area: "Klong Prao", nightly: 3800, rating: 4.4 },
+        { name: "Panviman Resort Koh Chang", kind: "Resort", area: "Kai Bae", nightly: 4600, rating: 4.5 }
+      ] },
+    { id: "kohkood", title: "Koh Kood Pristine Island", country: "Thailand", region: "Trat", days: 3, rating: 4.6, price: 7900, type: "Beach", grad: "kohkood", tags: ["Clear water", "Waterfalls"], blurb: "The far-eastern island — palm coves, clear water and near-empty beaches.",
+      stays: [
+        { name: "Soneva Kiri", kind: "Resort", area: "Private, west coast", nightly: 42000, rating: 4.9 },
+        { name: "Away Koh Kood", kind: "Resort", area: "Ngamkho Beach", nightly: 4300, rating: 4.5 },
+        { name: "The Beach Natural Resort Koh Kood", kind: "Resort", area: "Bang Bao Bay", nightly: 3600, rating: 4.4 }
+      ] },
+    { id: "chanthaburi", title: "Chanthaburi Gems & Waterfalls", country: "Thailand", region: "Chanthaburi", days: 2, rating: 4.3, price: 3400, type: "Cultural", grad: "chanthaburi", tags: ["Old town", "Gem market"], blurb: "A riverfront old town, Thailand's gem trade, and Namtok Phlio in the hills.",
+      stays: [
+        { name: "Maneechan Resort", kind: "Resort", area: "Riverside", nightly: 2200, rating: 4.3 },
+        { name: "K.P. Grand Hotel Chanthaburi", kind: "Hotel", area: "City centre", nightly: 1600, rating: 4.2 },
+        { name: "Chanthaboon riverside homestay (representative)", kind: "Homestay", area: "Old town", nightly: 1100, rating: 4.3 }
+      ] },
+    { id: "chiangrai", title: "Chiang Rai & the White Temple", country: "Thailand", region: "Chiang Rai", days: 3, rating: 4.6, price: 8200, type: "Cultural", grad: "chiangrai", tags: ["White Temple", "Golden Triangle"], blurb: "Wat Rong Khun's white temple, the Blue Temple and the Golden Triangle.",
+      stays: [
+        { name: "The Riverie by Katathani", kind: "Hotel", area: "Kok River", nightly: 4600, rating: 4.6 },
+        { name: "Le Meridien Chiang Rai Resort", kind: "Resort", area: "Riverside", nightly: 5200, rating: 4.6 },
+        { name: "Anantara Golden Triangle Elephant Camp", kind: "Resort", area: "Golden Triangle", nightly: 18000, rating: 4.8 }
+      ] },
+    { id: "pai", title: "Pai Mountain Retreat", country: "Thailand", region: "Mae Hong Son", days: 3, rating: 4.5, price: 6900, type: "Adventure", grad: "pai", tags: ["Canyon", "Hot springs"], blurb: "Hairpin roads up to a hippie valley — canyon sunsets, hot springs and bamboo bridges.",
+      stays: [
+        { name: "Reverie Siam Resort", kind: "Resort", area: "Pai River valley", nightly: 4200, rating: 4.6 },
+        { name: "Pai Island Resort", kind: "Resort", area: "By the river", nightly: 2600, rating: 4.4 },
+        { name: "Pai Village Boutique Resort", kind: "Resort", area: "Walking street", nightly: 2100, rating: 4.4 }
+      ] },
+    { id: "nan", title: "Nan Old Town & Valleys", country: "Thailand", region: "Nan", days: 3, rating: 4.5, price: 5600, type: "Cultural", grad: "nan", tags: ["Murals", "Slow travel"], blurb: "A quiet northern valley — the Wat Phumin murals and terraced hills at Doi Samer Dao.",
+      stays: [
+        { name: "Pukha Nanfa Hotel", kind: "Hotel", area: "Old town", nightly: 2400, rating: 4.5 },
+        { name: "Nan Boutique Hotel", kind: "Hotel", area: "Town centre", nightly: 1500, rating: 4.3 },
+        { name: "Nan riverside homestay (representative)", kind: "Homestay", area: "By the Nan River", nightly: 1000, rating: 4.3 }
+      ] },
+    { id: "sukhothai", title: "Sukhothai Historical Park", country: "Thailand", region: "Sukhothai", days: 2, rating: 4.7, price: 5200, type: "Cultural", grad: "sukhothai", tags: ["World Heritage", "Ruins"], blurb: "The first Thai kingdom's capital — serene ruins and lotus ponds, magic at dawn.",
+      stays: [
+        { name: "Sriwilai Sukhothai", kind: "Resort", area: "By the old city", nightly: 5200, rating: 4.7 },
+        { name: "Legendha Sukhothai Resort", kind: "Resort", area: "Historical park", nightly: 2800, rating: 4.5 },
+        { name: "Le Charme Sukhothai Resort", kind: "Resort", area: "Near the park", nightly: 2100, rating: 4.4 }
+      ] },
+    { id: "ubon", title: "Ubon Ratchathani & Pha Taem", country: "Thailand", region: "Ubon Ratchathani", days: 3, rating: 4.4, price: 6400, type: "Adventure", grad: "ubon", tags: ["Grand Canyon", "Cliff art"], blurb: "Sam Phan Bok's rocky 'grand canyon' of the Mekong and Pha Taem's prehistoric cliff paintings.",
+      stays: [
+        { name: "Sunee Grand Hotel Ubon", kind: "Hotel", area: "City centre", nightly: 1900, rating: 4.3 },
+        { name: "Tohsang Khongjiam Resort", kind: "Resort", area: "Mekong at Khong Chiam", nightly: 3200, rating: 4.4 },
+        { name: "The Outside Resort (representative)", kind: "Resort", area: "Near Pha Taem", nightly: 1800, rating: 4.2 }
+      ] },
+    { id: "chiangkhan", title: "Chiang Khan Riverside", country: "Thailand", region: "Loei", days: 2, rating: 4.5, price: 4800, type: "Cultural", grad: "chiangkhan", tags: ["Mekong", "Walking street"], blurb: "A wooden old town on the Mekong — morning alms, a lantern-lit walking street and Phu Thok mist.",
+      stays: [
+        { name: "Chiang Khan Hill Resort", kind: "Resort", area: "Kaeng Khut Khu", nightly: 2200, rating: 4.4 },
+        { name: "Chiangkhan River Mountain Resort", kind: "Resort", area: "Riverside", nightly: 2600, rating: 4.5 },
+        { name: "Loei riverside guesthouse (representative)", kind: "Guesthouse", area: "Walking street", nightly: 1200, rating: 4.3 }
+      ] },
+    { id: "samui", title: "Koh Samui Island Luxe", country: "Thailand", region: "Surat Thani", days: 3, rating: 4.6, price: 9800, type: "Beach", grad: "samui", tags: ["Palm beaches", "Big Buddha"], blurb: "Chaweng's palm-lined sands, the Big Buddha and hilltop infinity pools.",
+      stays: [
+        { name: "Banyan Tree Samui", kind: "Resort", area: "Lamai, private bay", nightly: 14000, rating: 4.8 },
+        { name: "Santiburi Koh Samui", kind: "Resort", area: "Mae Nam Beach", nightly: 8600, rating: 4.7 },
+        { name: "Anantara Bophut Koh Samui", kind: "Resort", area: "Bophut Beach", nightly: 7200, rating: 4.6 }
+      ] },
+    { id: "phangan", title: "Koh Pha Ngan Beaches", country: "Thailand", region: "Surat Thani", days: 3, rating: 4.4, price: 7600, type: "Beach", grad: "phangan", tags: ["Secret coves", "Waterfalls"], blurb: "Beyond the Full Moon Party — quiet northern coves, jungle waterfalls and viewpoints.",
+      stays: [
+        { name: "Anantara Rasananda Koh Phangan", kind: "Resort", area: "Thong Nai Pan Noi", nightly: 9800, rating: 4.7 },
+        { name: "SANTHIYA Koh Phangan Resort & Spa", kind: "Resort", area: "Thong Nai Pan", nightly: 7400, rating: 4.6 },
+        { name: "Buri Rasa Village Koh Phangan", kind: "Resort", area: "Baan Tai", nightly: 4200, rating: 4.4 }
+      ] },
+    { id: "kohtao", title: "Koh Tao Diving Weekend", country: "Thailand", region: "Surat Thani", days: 3, rating: 4.5, price: 6800, type: "Adventure", grad: "kohtao", tags: ["Diving", "Koh Nang Yuan"], blurb: "Thailand's dive-school island — easy reefs, the Koh Nang Yuan viewpoint and sunset bays.",
+      stays: [
+        { name: "Koh Tao Cabana", kind: "Resort", area: "Sairee, headland", nightly: 4600, rating: 4.4 },
+        { name: "Jamahkiri Resort & Spa", kind: "Resort", area: "Thian Og Bay", nightly: 5200, rating: 4.5 },
+        { name: "Charm Churee Villa", kind: "Resort", area: "Jansom Bay", nightly: 3600, rating: 4.3 }
+      ] },
+    { id: "khaosok", title: "Khao Sok Rainforest & Lake", country: "Thailand", region: "Surat Thani", days: 3, rating: 4.7, price: 7200, type: "Adventure", grad: "khaosok", tags: ["Cheow Lan Lake", "Rainforest"], blurb: "Limestone karsts over emerald Cheow Lan Lake, floating bungalows and ancient rainforest.",
+      stays: [
+        { name: "Elephant Hills", kind: "Camp", area: "Luxury tented camp", nightly: 12000, rating: 4.8 },
+        { name: "500 Rai Floating Resort", kind: "Resort", area: "Cheow Lan Lake", nightly: 5200, rating: 4.6 },
+        { name: "Khao Sok Rainforest Resort (representative)", kind: "Resort", area: "Park entrance", nightly: 2200, rating: 4.3 }
+      ] },
+    { id: "phuket", title: "Phuket Beaches & Old Town", country: "Thailand", region: "Phuket", days: 3, rating: 4.5, price: 8900, type: "Beach", grad: "phuket", tags: ["Sino-Portuguese", "Beach clubs"], blurb: "Andaman beaches, Sino-Portuguese old town lanes and clifftop sunset bars.",
+      stays: [
+        { name: "The Nai Harn", kind: "Resort", area: "Nai Harn Beach", nightly: 9800, rating: 4.7 },
+        { name: "Rosewood Phuket", kind: "Resort", area: "Emerald Bay", nightly: 18000, rating: 4.8 },
+        { name: "Amari Phuket", kind: "Resort", area: "Patong headland", nightly: 5200, rating: 4.5 }
+      ] },
+    { id: "krabi", title: "Krabi & Railay Cliffs", country: "Thailand", region: "Krabi", days: 3, rating: 4.7, price: 7800, type: "Beach", grad: "krabi", tags: ["Limestone", "Railay"], blurb: "Boat-only Railay, towering limestone, Phra Nang cave beach and island-hopping.",
+      stays: [
+        { name: "Rayavadee", kind: "Resort", area: "Railay / Phra Nang", nightly: 22000, rating: 4.8 },
+        { name: "Dusit Thani Krabi Beach Resort", kind: "Resort", area: "Klong Muang Beach", nightly: 6200, rating: 4.6 },
+        { name: "Sofitel Krabi Phokeethra", kind: "Resort", area: "Klong Muang", nightly: 5400, rating: 4.6 }
+      ] },
+    { id: "phiphi", title: "Koh Phi Phi Islands", country: "Thailand", region: "Krabi", days: 3, rating: 4.5, price: 8600, type: "Beach", grad: "phiphi", tags: ["Maya Bay", "Viewpoint"], blurb: "The famous viewpoint, Maya Bay and turquoise bays best seen by longtail at dawn.",
+      stays: [
+        { name: "Phi Phi Island Village Beach Resort", kind: "Resort", area: "Loh Ba Kao Bay", nightly: 9200, rating: 4.6 },
+        { name: "SAii Phi Phi Island Village", kind: "Resort", area: "Loh Ba Kao", nightly: 8800, rating: 4.6 },
+        { name: "Zeavola Resort", kind: "Resort", area: "Laem Tong", nightly: 10500, rating: 4.7 }
+      ] },
+    { id: "phangnga", title: "Phang Nga Bay & James Bond Island", country: "Thailand", region: "Phang Nga", days: 3, rating: 4.6, price: 7200, type: "Adventure", grad: "phangnga", tags: ["Sea caves", "Kayaking"], blurb: "Sheer karsts rising from the bay — sea-cave kayaking, Koh Panyee and James Bond Island.",
+      stays: [
+        { name: "Aleenta Phuket-Phang Nga Resort", kind: "Resort", area: "Natai Beach", nightly: 8800, rating: 4.7 },
+        { name: "The Sarojin", kind: "Resort", area: "Khao Lak edge", nightly: 9200, rating: 4.7 },
+        { name: "Phang Nga bay homestay (representative)", kind: "Homestay", area: "Near the pier", nightly: 1400, rating: 4.3 }
+      ] },
+    { id: "kholanta", title: "Koh Lanta Slow Islands", country: "Thailand", region: "Krabi", days: 3, rating: 4.5, price: 7400, type: "Beach", grad: "kholanta", tags: ["Long beaches", "Old town"], blurb: "Long, laid-back west-coast beaches, a stilted old town and sunset from the lighthouse cape.",
+      stays: [
+        { name: "Pimalai Resort & Spa", kind: "Resort", area: "Ba Kantiang Beach", nightly: 11000, rating: 4.7 },
+        { name: "Layana Resort & Spa", kind: "Resort", area: "Long Beach (adults-only)", nightly: 8600, rating: 4.7 },
+        { name: "Costa Lanta", kind: "Resort", area: "Klong Dao", nightly: 4200, rating: 4.4 }
+      ] },
+    { id: "khaolak", title: "Khao Lak & Similan Diving", country: "Thailand", region: "Phang Nga", days: 3, rating: 4.5, price: 8100, type: "Beach", grad: "khaolak", tags: ["Similans", "Quiet sands"], blurb: "Long quiet beaches and the launch point for the Similan Islands' world-class diving.",
+      stays: [
+        { name: "JW Marriott Khao Lak Resort & Spa", kind: "Resort", area: "Khuk Khak Beach", nightly: 8200, rating: 4.7 },
+        { name: "The Sarojin", kind: "Resort", area: "Pakarang Beach", nightly: 9200, rating: 4.8 },
+        { name: "Casa de La Flora", kind: "Resort", area: "Khuk Khak", nightly: 7600, rating: 4.6 }
+      ] },
+    { id: "lipe", title: "Koh Lipe Andaman Gem", country: "Thailand", region: "Satun", days: 3, rating: 4.6, price: 9200, type: "Beach", grad: "lipe", tags: ["Clearest water", "Snorkelling"], blurb: "The 'Maldives of Thailand' — powder sand and glass-clear water at the far Andaman edge.",
+      stays: [
+        { name: "Idyllic Concept Resort", kind: "Resort", area: "Sunrise Beach", nightly: 6800, rating: 4.5 },
+        { name: "Serendipity Beach Resort", kind: "Resort", area: "Quiet north cape", nightly: 7600, rating: 4.6 },
+        { name: "Castaway Resort Koh Lipe", kind: "Resort", area: "Sunrise Beach", nightly: 5200, rating: 4.5 }
       ] }
   ];
 
@@ -810,8 +978,9 @@ html{background:var(--bg)}
   };
 
   /* ---- distance from Bangkok + "usable weekend hours" (a GOGO original) --- */
-  var DRIVE = { amphawa: 1.5, ayutthaya: 1.5, pattaya: 2, bangkok: 0.3, kanchanaburi: 2.5, khaoyai: 2.5, huahin: 3, samet: 3.5, chiangmai: 3 };
-  GOGO.trips.forEach(function (t) { t.driveHrs = DRIVE[t.id] || 2; t.fly = (t.id === "chiangmai"); });
+  var DRIVE = { amphawa: 1.5, ayutthaya: 1.5, pattaya: 2, bangkok: 0.3, kanchanaburi: 2.5, samet: 3.5, huahin: 3, chiangmai: 2.5, khaoyai: 2.5, lopburi: 2, kohchang: 5, kohkood: 6, chanthaburi: 3.5, chiangrai: 3, pai: 4, nan: 3, sukhothai: 3, ubon: 3, chiangkhan: 3, samui: 2, phangan: 3, kohtao: 4, khaosok: 3, phuket: 2, krabi: 2.5, phiphi: 3.5, phangnga: 3, kholanta: 4, khaolak: 3.5, lipe: 5 };
+  var FLY = { chiangmai: 1, chiangrai: 1, pai: 1, nan: 1, sukhothai: 1, ubon: 1, chiangkhan: 1, samui: 1, phangan: 1, kohtao: 1, khaosok: 1, phuket: 1, krabi: 1, phiphi: 1, phangnga: 1, kholanta: 1, khaolak: 1, lipe: 1 };
+  GOGO.trips.forEach(function (t) { t.driveHrs = DRIVE[t.id] || 2; t.fly = FLY[t.id] === 1; });
   // A Friday 18:00 -> Sunday 20:00 escape is a 50-hour window; subtract the round trip.
   GOGO.usableHours = function (t) { return Math.max(8, Math.round(50 - 2 * t.driveHrs)); };
   GOGO.driveLabel = function (t) {
@@ -883,8 +1052,8 @@ html{background:var(--bg)}
     var base = GOGO.gradCss(trip.grad);
     var gallery = [
       { bg: base, cap: trip.region + " views" },
-      { bg: "linear-gradient(160deg,#FFC24B,#FF6A3D 50%,#C4326B)", cap: "On the trip" },
-      { bg: "linear-gradient(150deg,#8FD9C0,#3E9CC4 55%,#2F7E52)", cap: "Local life" }
+      { bg: "linear-gradient(155deg,#B98F4C,#6E3A44 55%,#241C22)", cap: "On the trip" },
+      { bg: "linear-gradient(155deg,#6E9B98,#2E5A5E 58%,#22343A)", cap: "Local life" }
     ];
     var itinerary = [];
     for (var d = 1; d <= trip.days; d++) {
@@ -1093,7 +1262,7 @@ window.GOGO.initHome = function () {
   document.querySelectorAll(".benefit__ic").forEach(function (el, i) { el.innerHTML = benefitIcons[i] || ""; });
 
   /* ---- destination dropdown --------------------------------------------- */
-  var DESTS = ["Anywhere", "Pattaya", "Hua Hin", "Koh Samet", "Ayutthaya", "Amphawa", "Chiang Mai", "Kanchanaburi", "Khao Yai", "Bangkok"];
+  var DESTS = ["Anywhere", "Bangkok", "Chiang Mai", "Chiang Rai", "Pai", "Phuket", "Krabi", "Koh Phi Phi", "Koh Samui", "Koh Pha Ngan", "Hua Hin", "Pattaya", "Koh Samet", "Ayutthaya", "Khao Yai", "Sukhothai"];
   var dest = "Anywhere";
   var destBtn = $("destBtn"), destPanel = $("destPanel"), destVal = $("destVal");
   destPanel.innerHTML = DESTS.map(function (d) { return '<button class="dd__item" type="button" data-dest="' + d + '">' + d + "</button>"; }).join("");
@@ -1163,12 +1332,22 @@ window.GOGO.initSearch = function () {
   "use strict";
   var GOGO = window.GOGO, money = GOGO.money, $ = function (id) { return document.getElementById(id); };
 
-  var state = { maxPrice: 10000, types: {}, duration: "Any", minRating: false, sort: "rec", view: "list" };
+  var state = { dest: "", maxPrice: 10000, types: {}, duration: "Any", minRating: false, sort: "rec", view: "list" };
 
-  /* ---- header from query ------------------------------------------------- */
-  var p = GOGO.params();
-  var dest = p.get("dest");
-  if (dest) $("results-title").textContent = "Trips in " + dest;
+  /* ---- destination match (search a place -> show that place) ------------- */
+  function words(s) { return (s || "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\b(koh|ko)\b/g, " ").split(/\s+/).filter(Boolean); }
+  function destMatch(t, dest) {
+    var d = words(dest); if (!d.length) return true;
+    var set = {}; words(t.title + " " + t.region + " " + t.id + " " + t.country).forEach(function (w) { set[w] = 1; });
+    return d.every(function (tok) { return tok.length < 2 || set[tok] === 1; });   // whole-word, not substring
+  }
+  function setTitle() {
+    $("results-title").textContent = state.dest ? ("Trips in " + state.dest) : "All trips";
+  }
+
+  /* ---- header from query (multi-file site reads ?dest=...) --------------- */
+  state.dest = (GOGO.params().get("dest") || "").trim();
+  if (state.dest) setTitle();
 
   /* ---- filter data ------------------------------------------------------- */
   var TYPES = ["Beach", "City", "Adventure", "Cultural"];
@@ -1182,6 +1361,7 @@ window.GOGO.initSearch = function () {
   function filtered() {
     var anyType = Object.keys(state.types).length > 0;
     var list = GOGO.trips.filter(function (t) {
+      if (state.dest && !destMatch(t, state.dest)) return false;
       if (t.price > state.maxPrice) return false;
       if (anyType && !state.types[t.type]) return false;
       if (!inDur(t.days, state.duration)) return false;
@@ -1242,7 +1422,7 @@ window.GOGO.initSearch = function () {
 
   function render() {
     var list = filtered();
-    $("results-sub").innerHTML = "<b style=\"color:var(--ink)\">" + list.length + "</b> trips match your filters";
+    $("results-sub").innerHTML = "<b style=\"color:var(--ink)\">" + list.length + "</b>" + (list.length === 1 ? " trip matches" : " trips match") + " your filters";
     var area = $("resultsArea");
     if (state.view === "map") { area.innerHTML = mapView(list); return; }
     if (!list.length) {
@@ -1300,6 +1480,13 @@ window.GOGO.initSearch = function () {
     setTrack(); render();
   }
   $("clearFilters").addEventListener("click", clearAll);
+
+  /* ---- single-page hook: the router calls this when you land on search --- */
+  window.GOGO.searchSetDest = function (dest) {
+    state.dest = (dest || "").trim();
+    setTitle();
+    render();
+  };
 
   setTrack();
   render();
@@ -1771,10 +1958,7 @@ window.GOGO.initSurprise = function () {
       if (root && TRIP_TEMPLATE != null) root.innerHTML = TRIP_TEMPLATE;
       GOGO._runTrip(r.params.get("id"));
     }
-    if (path === "search") {
-      var dest = r.params.get("dest"), t = document.getElementById("results-title");
-      if (t) t.textContent = dest ? ("Trips in " + dest) : "All trips";
-    }
+    if (path === "search" && GOGO.searchSetDest) GOGO.searchSetDest(r.params.get("dest"));
     setActiveNav(path);
     var active = document.querySelector('[data-route="' + path + '"]');
     if (active) active.querySelectorAll(".reveal").forEach(function (e) { e.classList.add("in"); });

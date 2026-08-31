@@ -21,7 +21,7 @@
   document.querySelectorAll(".benefit__ic").forEach(function (el, i) { el.innerHTML = benefitIcons[i] || ""; });
 
   /* ---- destination dropdown --------------------------------------------- */
-  var DESTS = ["Anywhere", "Pattaya", "Hua Hin", "Koh Samet", "Ayutthaya", "Amphawa", "Chiang Mai", "Kanchanaburi", "Khao Yai", "Bangkok"];
+  var DESTS = ["Anywhere", "Bangkok", "Chiang Mai", "Chiang Rai", "Pai", "Phuket", "Krabi", "Koh Phi Phi", "Koh Samui", "Koh Pha Ngan", "Hua Hin", "Pattaya", "Koh Samet", "Ayutthaya", "Khao Yai", "Sukhothai"];
   var dest = "Anywhere";
   var destBtn = $("destBtn"), destPanel = $("destPanel"), destVal = $("destVal");
   destPanel.innerHTML = DESTS.map(function (d) { return '<button class="dd__item" type="button" data-dest="' + d + '">' + d + "</button>"; }).join("");
