@@ -20,10 +20,32 @@ def must(cond, msg):
         print("BUILD ERROR:", msg); sys.exit(1)
 
 # ---------------------------------------------------------------- CSS --------
+# .ph--<id> : embed a real photo (downscaled) as a data URI when present so the
+# single file is self-contained; otherwise drop the layer and show the gradient.
+IMGDIR = ROOT / "assets/img"
+import base64, io
+def _data_uri(fid):
+    p = IMGDIR / (fid + ".jpg")
+    if not p.exists():
+        return None
+    try:
+        from PIL import Image
+        im = Image.open(p).convert("RGB")
+        w, h = im.size
+        if w > 1000:
+            im = im.resize((1000, round(h * 1000 / w)), Image.LANCZOS)
+        buf = io.BytesIO(); im.save(buf, "JPEG", quality=72, optimize=True)
+        raw = buf.getvalue()
+    except Exception:
+        raw = p.read_bytes()
+    return "data:image/jpeg;base64," + base64.b64encode(raw).decode()
+_embedded = []
+def _embed(m):
+    d = _data_uri(m.group(1))
+    if d: _embedded.append(m.group(1)); return "url(" + d + ") center/cover no-repeat, "
+    return ""
 css = rd("assets/css/styles.css")
-# .ph--* layer a real photo over a gradient; with no bundled photos the image
-# would 404, so drop the url() layer here and let the gradient show.
-css = re.sub(r"url\('\.\./img/[^']+'\) center/cover no-repeat, ", "", css)
+css = re.sub(r"url\('\.\./img/([a-z]+)\.jpg'\) center/cover no-repeat, ", _embed, css)
 must("url('../img/" not in css, "photo url() layers still present in CSS")
 
 font_import = (
@@ -199,5 +221,5 @@ doc = f"""<!doctype html>
 """
 
 OUT.write_text(doc, encoding="utf-8")
-print("WROTE", OUT.relative_to(ROOT), len(doc), "bytes")
+print("WROTE", OUT.relative_to(ROOT), len(doc), "bytes", "| embedded photos:", len(_embedded))
 print("routes:", re.findall(r'data-route="(\w+)"', sections))
