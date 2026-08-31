@@ -102,9 +102,6 @@ trip_js = rd("assets/js/trip.js")
 trip_js = trip_js.replace("(function () {", "window.GOGO._runTrip = function (id) {", 1)
 trip_js = trip_js.replace('var trip = GOGO.getTrip(GOGO.params().get("id"));',
                           'var trip = GOGO.getTrip(id);')
-trip_js = trip_js.replace(
-    'var photoLayer = "url(\'assets/img/" + trip.id + ".jpg\') center/cover no-repeat, ";',
-    'var photoLayer = "";')
 _idx = trip_js.rfind("})();")
 must(_idx != -1, "trip IIFE close not found")
 trip_js = trip_js[:_idx] + "};" + trip_js[_idx + len("})();"):]

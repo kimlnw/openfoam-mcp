@@ -1530,14 +1530,18 @@ window.GOGO._runTrip = function (id) {
   /* ---- crumb + gallery --------------------------------------------------- */
   $("crumb").textContent = trip.country + " · " + trip.region;
 
-  var photoLayer = "";
-  function bgFor(im, i) { return (i === 0 ? photoLayer : "") + im.bg; }
   function renderGallery() {
-    var g = detail.gallery;
-    $("gMain").style.background = bgFor(g[st.img], st.img);
+    var g = detail.gallery, main = $("gMain");
+    // Position 0 is the real destination photo, served through the .ph--<id>
+    // class (which layers the image over the gradient); the rest are mood
+    // gradients set inline. This reuses the same image the cards use.
+    if (st.img === 0) { main.className = "g-main ph--" + trip.id; main.style.background = ""; }
+    else { main.className = "g-main"; main.style.background = g[st.img].bg; }
     $("gCap").textContent = g[st.img].cap;
     $("thumbs").innerHTML = g.map(function (im, i) {
-      return '<button class="thumb' + (i === st.img ? " is-active" : "") + '" type="button" data-i="' + i + '" style="background:' + bgFor(im, i) + '" aria-label="Photo ' + (i + 1) + '"></button>';
+      var active = i === st.img ? " is-active" : "";
+      if (i === 0) return '<button class="thumb ph--' + trip.id + active + '" type="button" data-i="0" aria-label="Photo 1"></button>';
+      return '<button class="thumb' + active + '" type="button" data-i="' + i + '" style="background:' + im.bg + '" aria-label="Photo ' + (i + 1) + '"></button>';
     }).join("");
   }
   $("thumbs").addEventListener("click", function (e) {
