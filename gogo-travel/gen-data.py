@@ -185,10 +185,22 @@ DESTINATIONS = [
        terms=["Koh Lipe beach Thailand","Sunrise Beach Koh Lipe","Koh Lipe Andaman"]),
 ]
 
+# id -> broad region zone (for the region filter) ----------------------------
+ZONE = {
+    "chiangmai": "North", "chiangrai": "North", "pai": "North", "nan": "North", "sukhothai": "North",
+    "khaoyai": "Isan", "ubon": "Isan", "chiangkhan": "Isan",
+    "bangkok": "Central", "ayutthaya": "Central", "amphawa": "Central", "kanchanaburi": "Central", "lopburi": "Central",
+    "pattaya": "East", "samet": "East", "kohchang": "East", "kohkood": "East", "chanthaburi": "East",
+    "huahin": "Gulf", "samui": "Gulf", "phangan": "Gulf", "kohtao": "Gulf",
+    "phuket": "Andaman", "krabi": "Andaman", "phiphi": "Andaman", "phangnga": "Andaman",
+    "kholanta": "Andaman", "khaolak": "Andaman", "lipe": "Andaman", "khaosok": "Andaman",
+}
+
 # ------------------------------------------------------------------ derive ----
 ORIG = {"amphawa","ayutthaya","pattaya","bangkok","kanchanaburi","samet","huahin","chiangmai","khaoyai"}
 ids = [d["id"] for d in DESTINATIONS]
 assert len(ids) == len(set(ids)), "duplicate id"
+assert all(d["id"] in ZONE for d in DESTINATIONS), "every destination needs a ZONE"
 
 grad = {}
 for i, d in enumerate(DESTINATIONS):
@@ -203,9 +215,9 @@ def trip_obj(d):
         for s in d["stays"])
     tags = "[" + ", ".join(js_str(t) for t in d["tags"]) + "]"
     return (
-        '    { id: %s, title: %s, country: "Thailand", region: %s, days: %d, rating: %s, price: %d, type: %s, grad: %s, tags: %s, blurb: %s,\n'
+        '    { id: %s, title: %s, country: "Thailand", region: %s, zone: %s, days: %d, rating: %s, price: %d, type: %s, grad: %s, tags: %s, blurb: %s,\n'
         '      stays: [\n        %s\n      ] }'
-    ) % (js_str(d["id"]), js_str(d["title"]), js_str(d["region"]), d["days"], d["rating"], d["price"],
+    ) % (js_str(d["id"]), js_str(d["title"]), js_str(d["region"]), js_str(ZONE[d["id"]]), d["days"], d["rating"], d["price"],
          js_str(d["type"]), js_str(d["id"]), tags, js_str(d["blurb"]), stays)
 
 trips_js = "  GOGO.trips = [\n" + ",\n".join(trip_obj(d) for d in DESTINATIONS) + "\n  ];"
@@ -235,8 +247,9 @@ dpath = ROOT / "assets/js/data.js"
 data = dpath.read_text()
 data = sub1(data, r"  GOGO\.grad = \{.*?\n  \};", grad_js, "grad")
 data = sub1(data, r"  GOGO\.trips = \[.*?\n  \];", trips_js, "trips")
-data = sub1(data, r"  var DRIVE = \{[^}]*\};", drive_js + "\n" + fly_js, "DRIVE")
-data = sub1(data, r't\.fly = \(t\.id === "chiangmai"\);', "t.fly = FLY[t.id] === 1;", "fly", flags=0)
+# these two are idempotent: they match either the pristine or already-patched form
+data = sub1(data, r"  var DRIVE = \{[^}]*\};(?:\n  var FLY = \{[^}]*\};)?", drive_js + "\n" + fly_js, "DRIVE")
+data = sub1(data, r't\.fly = (?:\(t\.id === "chiangmai"\)|FLY\[t\.id\] === 1);', "t.fly = FLY[t.id] === 1;", "fly", flags=0)
 # mute the two bright fallback-gallery gradients so new trips stay on-theme
 data = data.replace('{ bg: "linear-gradient(160deg,#FFC24B,#FF6A3D 50%,#C4326B)", cap: "On the trip" }',
                     '{ bg: "linear-gradient(155deg,#B98F4C,#6E3A44 55%,#241C22)", cap: "On the trip" }')
@@ -247,7 +260,8 @@ dpath.write_text(data)
 # styles.css
 spath = ROOT / "assets/css/styles.css"
 styles = spath.read_text()
-styles = sub1(styles, r"\.ph--pattaya \{.*?\n(?=\n/\* ---- Trip card)", ph_css + "\n", "ph-css")
+# match the whole consecutive run of .ph--<id> rules (order-independent, idempotent)
+styles = sub1(styles, r"(?:\.ph--[a-z]+ \{[^}]*\}\n)+", ph_css + "\n", "ph-css")
 spath.write_text(styles)
 
 # fetch-photos.py

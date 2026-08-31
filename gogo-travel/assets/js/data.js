@@ -48,181 +48,181 @@
 
   /* ---- catalogue (weekend getaways from Bangkok) ------------------------- */
   GOGO.trips = [
-    { id: "amphawa", title: "Amphawa Floating Market", country: "Thailand", region: "Samut Songkhram", days: 2, rating: 4.3, price: 2900, type: "Cultural", grad: "amphawa", tags: ["Floating market", "Fireflies"], blurb: "Canalside markets, a longtail firefly cruise and the Maeklong railway market.",
+    { id: "amphawa", title: "Amphawa Floating Market", country: "Thailand", region: "Samut Songkhram", zone: "Central", days: 2, rating: 4.3, price: 2900, type: "Cultural", grad: "amphawa", tags: ["Floating market", "Fireflies"], blurb: "Canalside markets, a longtail firefly cruise and the Maeklong railway market.",
       stays: [
         { name: "Baan Amphawa Resort & Spa", kind: "Resort", area: "Canalside", nightly: 2800, rating: 4.3 },
         { name: "Amphawa Na Non Hotel & Spa", kind: "Hotel", area: "By the floating market", nightly: 2400, rating: 4.4 },
         { name: "Canalside homestay (representative)", kind: "Homestay", area: "Amphawa canal", nightly: 900, rating: 4.2 }
       ] },
-    { id: "ayutthaya", title: "Ayutthaya Temple Weekend", country: "Thailand", region: "Ayutthaya", days: 2, rating: 4.6, price: 3200, type: "Cultural", grad: "ayutthaya", tags: ["Temples", "Riverside"], blurb: "The ruined temples of Siam's old capital, best by bicycle and at sunset.",
+    { id: "ayutthaya", title: "Ayutthaya Temple Weekend", country: "Thailand", region: "Ayutthaya", zone: "Central", days: 2, rating: 4.6, price: 3200, type: "Cultural", grad: "ayutthaya", tags: ["Temples", "Riverside"], blurb: "The ruined temples of Siam's old capital, best by bicycle and at sunset.",
       stays: [
         { name: "Sala Ayutthaya", kind: "Hotel", area: "Riverside, temple view", nightly: 3600, rating: 4.7 },
         { name: "Classic Kameo Hotel & Serviced Apartments", kind: "Residence", area: "City centre", nightly: 1600, rating: 4.3 },
         { name: "iuDia on the river", kind: "Residence", area: "Riverside", nightly: 2200, rating: 4.5 }
       ] },
-    { id: "pattaya", title: "Pattaya Beach Break", country: "Thailand", region: "Chonburi", days: 2, rating: 4.4, price: 3900, type: "Beach", grad: "pattaya", tags: ["Beach", "Islands"], blurb: "Two easy hours from Bangkok — beach clubs, Koh Larn day-trips and night markets.",
+    { id: "pattaya", title: "Pattaya Beach Break", country: "Thailand", region: "Chonburi", zone: "East", days: 2, rating: 4.4, price: 3900, type: "Beach", grad: "pattaya", tags: ["Beach", "Islands"], blurb: "Two easy hours from Bangkok — beach clubs, Koh Larn day-trips and night markets.",
       stays: [
         { name: "Holiday Inn Pattaya", kind: "Resort", area: "Pattaya Beach Road", nightly: 3200, rating: 4.5 },
         { name: "Hilton Pattaya", kind: "Hotel", area: "Central Pattaya", nightly: 4100, rating: 4.6 },
         { name: "Amari Pattaya", kind: "Hotel", area: "North Pattaya", nightly: 2600, rating: 4.4 }
       ] },
-    { id: "bangkok", title: "Bangkok Riverside Staycation", country: "Thailand", region: "Bangkok", days: 2, rating: 4.5, price: 4200, type: "City", grad: "bangkok", tags: ["Riverside", "Rooftops"], blurb: "A weekend of temples, river ferries, rooftop bars and endless street food.",
+    { id: "bangkok", title: "Bangkok Riverside Staycation", country: "Thailand", region: "Bangkok", zone: "Central", days: 2, rating: 4.5, price: 4200, type: "City", grad: "bangkok", tags: ["Riverside", "Rooftops"], blurb: "A weekend of temples, river ferries, rooftop bars and endless street food.",
       stays: [
         { name: "Chatrium Hotel Riverside Bangkok", kind: "Hotel", area: "Charoen Krung, riverside", nightly: 3400, rating: 4.6 },
         { name: "Avani+ Riverside Bangkok", kind: "Hotel", area: "Thonburi riverside", nightly: 3900, rating: 4.6 },
         { name: "Bangkok Marriott Marquis Queen's Park", kind: "Hotel", area: "Sukhumvit", nightly: 4200, rating: 4.6 }
       ] },
-    { id: "kanchanaburi", title: "River Kwai & Erawan Falls", country: "Thailand", region: "Kanchanaburi", days: 3, rating: 4.6, price: 5500, type: "Adventure", grad: "kanchanaburi", tags: ["Waterfalls", "History"], blurb: "The Bridge on the River Kwai, the Death Railway, and Erawan's seven-tier falls.",
+    { id: "kanchanaburi", title: "River Kwai & Erawan Falls", country: "Thailand", region: "Kanchanaburi", zone: "Central", days: 3, rating: 4.6, price: 5500, type: "Adventure", grad: "kanchanaburi", tags: ["Waterfalls", "History"], blurb: "The Bridge on the River Kwai, the Death Railway, and Erawan's seven-tier falls.",
       stays: [
         { name: "The Float House River Kwai", kind: "Villa", area: "Floating, on the River Kwai", nightly: 6800, rating: 4.6 },
         { name: "U Inchantree Kanchanaburi", kind: "Hotel", area: "Riverside, near the bridge", nightly: 2900, rating: 4.5 },
         { name: "X2 River Kwai Resort", kind: "Resort", area: "Riverfront", nightly: 5600, rating: 4.5 }
       ] },
-    { id: "samet", title: "Koh Samet Island Escape", country: "Thailand", region: "Rayong", days: 3, rating: 4.3, price: 5800, type: "Beach", grad: "samet", tags: ["White sand", "Snorkelling"], blurb: "The closest white-sand island to Bangkok — powder beaches and clear water.",
+    { id: "samet", title: "Koh Samet Island Escape", country: "Thailand", region: "Rayong", zone: "East", days: 3, rating: 4.3, price: 5800, type: "Beach", grad: "samet", tags: ["White sand", "Snorkelling"], blurb: "The closest white-sand island to Bangkok — powder beaches and clear water.",
       stays: [
         { name: "Sai Kaew Beach Resort", kind: "Resort", area: "Sai Kaew Beach", nightly: 3400, rating: 4.3 },
         { name: "Ao Prao Resort", kind: "Resort", area: "Ao Prao (sunset side)", nightly: 4200, rating: 4.4 },
         { name: "Paradee Resort", kind: "Resort", area: "Quiet south end", nightly: 7800, rating: 4.6 }
       ] },
-    { id: "huahin", title: "Hua Hin Seaside Weekend", country: "Thailand", region: "Prachuap Khiri Khan", days: 3, rating: 4.7, price: 6500, type: "Beach", grad: "huahin", tags: ["Beach", "Night markets"], blurb: "A relaxed royal beach town — long sands, night markets and a water park.",
+    { id: "huahin", title: "Hua Hin Seaside Weekend", country: "Thailand", region: "Prachuap Khiri Khan", zone: "Gulf", days: 3, rating: 4.7, price: 6500, type: "Beach", grad: "huahin", tags: ["Beach", "Night markets"], blurb: "A relaxed royal beach town — long sands, night markets and a water park.",
       stays: [
         { name: "Holiday Inn Resort Vana Nava Hua Hin", kind: "Resort", area: "Near Vana Nava water park", nightly: 4500, rating: 4.5 },
         { name: "Centara Grand Beach Resort & Villas Hua Hin", kind: "Resort", area: "On the beach", nightly: 6200, rating: 4.6 },
         { name: "InterContinental Hua Hin Resort", kind: "Resort", area: "Beachfront", nightly: 5400, rating: 4.7 }
       ] },
-    { id: "chiangmai", title: "Chiang Mai City & Temples", country: "Thailand", region: "Chiang Mai", days: 3, rating: 4.7, price: 7900, type: "City", grad: "chiangmai", tags: ["Temples", "Mountains"], blurb: "Old-city temples, Nimman cafés and Doi Suthep above the northern capital.",
+    { id: "chiangmai", title: "Chiang Mai City & Temples", country: "Thailand", region: "Chiang Mai", zone: "North", days: 3, rating: 4.7, price: 7900, type: "City", grad: "chiangmai", tags: ["Temples", "Mountains"], blurb: "Old-city temples, Nimman cafés and Doi Suthep above the northern capital.",
       stays: [
         { name: "Shangri-La Chiang Mai", kind: "Hotel", area: "Near the Night Bazaar", nightly: 5200, rating: 4.7 },
         { name: "U Nimman Chiang Mai", kind: "Hotel", area: "Nimmanhaemin", nightly: 3800, rating: 4.6 },
         { name: "Anantara Chiang Mai Resort", kind: "Resort", area: "Riverside", nightly: 6900, rating: 4.7 }
       ] },
-    { id: "khaoyai", title: "Khao Yai Nature & Wineries", country: "Thailand", region: "Nakhon Ratchasima", days: 3, rating: 4.8, price: 8900, type: "Adventure", grad: "khaoyai", tags: ["National park", "Vineyards"], blurb: "Thailand's oldest national park, waterfalls and wine country, cool-air cafés.",
+    { id: "khaoyai", title: "Khao Yai Nature & Wineries", country: "Thailand", region: "Nakhon Ratchasima", zone: "Isan", days: 3, rating: 4.8, price: 8900, type: "Adventure", grad: "khaoyai", tags: ["National park", "Vineyards"], blurb: "Thailand's oldest national park, waterfalls and wine country, cool-air cafés.",
       stays: [
         { name: "InterContinental Khao Yai Resort", kind: "Resort", area: "Pak Chong", nightly: 9500, rating: 4.8 },
         { name: "Kirimaya Golf Resort & Spa", kind: "Resort", area: "By the national park", nightly: 6400, rating: 4.5 },
         { name: "Pool villa near Toscana (representative)", kind: "Villa", area: "Khao Yai valley", nightly: 3900, rating: 4.3 }
       ] },
-    { id: "lopburi", title: "Lopburi Monkey City & Sunflowers", country: "Thailand", region: "Lopburi", days: 2, rating: 4.2, price: 2600, type: "Cultural", grad: "lopburi", tags: ["Khmer ruins", "Monkeys"], blurb: "Khmer-era prangs overrun by monkeys, and sunflower fields in the cool season.",
+    { id: "lopburi", title: "Lopburi Monkey City & Sunflowers", country: "Thailand", region: "Lopburi", zone: "Central", days: 2, rating: 4.2, price: 2600, type: "Cultural", grad: "lopburi", tags: ["Khmer ruins", "Monkeys"], blurb: "Khmer-era prangs overrun by monkeys, and sunflower fields in the cool season.",
       stays: [
         { name: "Lopburi Inn Resort", kind: "Hotel", area: "City edge", nightly: 1500, rating: 4.1 },
         { name: "Noom Guesthouse", kind: "Guesthouse", area: "Old town", nightly: 700, rating: 4.2 },
         { name: "Baan Krua Nara (representative)", kind: "Homestay", area: "Near Phra Prang Sam Yot", nightly: 950, rating: 4.2 }
       ] },
-    { id: "kohchang", title: "Koh Chang Rainforest & Beaches", country: "Thailand", region: "Trat", days: 3, rating: 4.4, price: 6800, type: "Beach", grad: "kohchang", tags: ["Jungle", "White Sand Beach"], blurb: "Thailand's second-largest island — jungle waterfalls and long west-coast sands.",
+    { id: "kohchang", title: "Koh Chang Rainforest & Beaches", country: "Thailand", region: "Trat", zone: "East", days: 3, rating: 4.4, price: 6800, type: "Beach", grad: "kohchang", tags: ["Jungle", "White Sand Beach"], blurb: "Thailand's second-largest island — jungle waterfalls and long west-coast sands.",
       stays: [
         { name: "The Dewa Koh Chang", kind: "Resort", area: "Klong Prao Beach", nightly: 4200, rating: 4.4 },
         { name: "Emerald Cove Koh Chang", kind: "Resort", area: "Klong Prao", nightly: 3800, rating: 4.4 },
         { name: "Panviman Resort Koh Chang", kind: "Resort", area: "Kai Bae", nightly: 4600, rating: 4.5 }
       ] },
-    { id: "kohkood", title: "Koh Kood Pristine Island", country: "Thailand", region: "Trat", days: 3, rating: 4.6, price: 7900, type: "Beach", grad: "kohkood", tags: ["Clear water", "Waterfalls"], blurb: "The far-eastern island — palm coves, clear water and near-empty beaches.",
+    { id: "kohkood", title: "Koh Kood Pristine Island", country: "Thailand", region: "Trat", zone: "East", days: 3, rating: 4.6, price: 7900, type: "Beach", grad: "kohkood", tags: ["Clear water", "Waterfalls"], blurb: "The far-eastern island — palm coves, clear water and near-empty beaches.",
       stays: [
         { name: "Soneva Kiri", kind: "Resort", area: "Private, west coast", nightly: 42000, rating: 4.9 },
         { name: "Away Koh Kood", kind: "Resort", area: "Ngamkho Beach", nightly: 4300, rating: 4.5 },
         { name: "The Beach Natural Resort Koh Kood", kind: "Resort", area: "Bang Bao Bay", nightly: 3600, rating: 4.4 }
       ] },
-    { id: "chanthaburi", title: "Chanthaburi Gems & Waterfalls", country: "Thailand", region: "Chanthaburi", days: 2, rating: 4.3, price: 3400, type: "Cultural", grad: "chanthaburi", tags: ["Old town", "Gem market"], blurb: "A riverfront old town, Thailand's gem trade, and Namtok Phlio in the hills.",
+    { id: "chanthaburi", title: "Chanthaburi Gems & Waterfalls", country: "Thailand", region: "Chanthaburi", zone: "East", days: 2, rating: 4.3, price: 3400, type: "Cultural", grad: "chanthaburi", tags: ["Old town", "Gem market"], blurb: "A riverfront old town, Thailand's gem trade, and Namtok Phlio in the hills.",
       stays: [
         { name: "Maneechan Resort", kind: "Resort", area: "Riverside", nightly: 2200, rating: 4.3 },
         { name: "K.P. Grand Hotel Chanthaburi", kind: "Hotel", area: "City centre", nightly: 1600, rating: 4.2 },
         { name: "Chanthaboon riverside homestay (representative)", kind: "Homestay", area: "Old town", nightly: 1100, rating: 4.3 }
       ] },
-    { id: "chiangrai", title: "Chiang Rai & the White Temple", country: "Thailand", region: "Chiang Rai", days: 3, rating: 4.6, price: 8200, type: "Cultural", grad: "chiangrai", tags: ["White Temple", "Golden Triangle"], blurb: "Wat Rong Khun's white temple, the Blue Temple and the Golden Triangle.",
+    { id: "chiangrai", title: "Chiang Rai & the White Temple", country: "Thailand", region: "Chiang Rai", zone: "North", days: 3, rating: 4.6, price: 8200, type: "Cultural", grad: "chiangrai", tags: ["White Temple", "Golden Triangle"], blurb: "Wat Rong Khun's white temple, the Blue Temple and the Golden Triangle.",
       stays: [
         { name: "The Riverie by Katathani", kind: "Hotel", area: "Kok River", nightly: 4600, rating: 4.6 },
         { name: "Le Meridien Chiang Rai Resort", kind: "Resort", area: "Riverside", nightly: 5200, rating: 4.6 },
         { name: "Anantara Golden Triangle Elephant Camp", kind: "Resort", area: "Golden Triangle", nightly: 18000, rating: 4.8 }
       ] },
-    { id: "pai", title: "Pai Mountain Retreat", country: "Thailand", region: "Mae Hong Son", days: 3, rating: 4.5, price: 6900, type: "Adventure", grad: "pai", tags: ["Canyon", "Hot springs"], blurb: "Hairpin roads up to a hippie valley — canyon sunsets, hot springs and bamboo bridges.",
+    { id: "pai", title: "Pai Mountain Retreat", country: "Thailand", region: "Mae Hong Son", zone: "North", days: 3, rating: 4.5, price: 6900, type: "Adventure", grad: "pai", tags: ["Canyon", "Hot springs"], blurb: "Hairpin roads up to a hippie valley — canyon sunsets, hot springs and bamboo bridges.",
       stays: [
         { name: "Reverie Siam Resort", kind: "Resort", area: "Pai River valley", nightly: 4200, rating: 4.6 },
         { name: "Pai Island Resort", kind: "Resort", area: "By the river", nightly: 2600, rating: 4.4 },
         { name: "Pai Village Boutique Resort", kind: "Resort", area: "Walking street", nightly: 2100, rating: 4.4 }
       ] },
-    { id: "nan", title: "Nan Old Town & Valleys", country: "Thailand", region: "Nan", days: 3, rating: 4.5, price: 5600, type: "Cultural", grad: "nan", tags: ["Murals", "Slow travel"], blurb: "A quiet northern valley — the Wat Phumin murals and terraced hills at Doi Samer Dao.",
+    { id: "nan", title: "Nan Old Town & Valleys", country: "Thailand", region: "Nan", zone: "North", days: 3, rating: 4.5, price: 5600, type: "Cultural", grad: "nan", tags: ["Murals", "Slow travel"], blurb: "A quiet northern valley — the Wat Phumin murals and terraced hills at Doi Samer Dao.",
       stays: [
         { name: "Pukha Nanfa Hotel", kind: "Hotel", area: "Old town", nightly: 2400, rating: 4.5 },
         { name: "Nan Boutique Hotel", kind: "Hotel", area: "Town centre", nightly: 1500, rating: 4.3 },
         { name: "Nan riverside homestay (representative)", kind: "Homestay", area: "By the Nan River", nightly: 1000, rating: 4.3 }
       ] },
-    { id: "sukhothai", title: "Sukhothai Historical Park", country: "Thailand", region: "Sukhothai", days: 2, rating: 4.7, price: 5200, type: "Cultural", grad: "sukhothai", tags: ["World Heritage", "Ruins"], blurb: "The first Thai kingdom's capital — serene ruins and lotus ponds, magic at dawn.",
+    { id: "sukhothai", title: "Sukhothai Historical Park", country: "Thailand", region: "Sukhothai", zone: "North", days: 2, rating: 4.7, price: 5200, type: "Cultural", grad: "sukhothai", tags: ["World Heritage", "Ruins"], blurb: "The first Thai kingdom's capital — serene ruins and lotus ponds, magic at dawn.",
       stays: [
         { name: "Sriwilai Sukhothai", kind: "Resort", area: "By the old city", nightly: 5200, rating: 4.7 },
         { name: "Legendha Sukhothai Resort", kind: "Resort", area: "Historical park", nightly: 2800, rating: 4.5 },
         { name: "Le Charme Sukhothai Resort", kind: "Resort", area: "Near the park", nightly: 2100, rating: 4.4 }
       ] },
-    { id: "ubon", title: "Ubon Ratchathani & Pha Taem", country: "Thailand", region: "Ubon Ratchathani", days: 3, rating: 4.4, price: 6400, type: "Adventure", grad: "ubon", tags: ["Grand Canyon", "Cliff art"], blurb: "Sam Phan Bok's rocky 'grand canyon' of the Mekong and Pha Taem's prehistoric cliff paintings.",
+    { id: "ubon", title: "Ubon Ratchathani & Pha Taem", country: "Thailand", region: "Ubon Ratchathani", zone: "Isan", days: 3, rating: 4.4, price: 6400, type: "Adventure", grad: "ubon", tags: ["Grand Canyon", "Cliff art"], blurb: "Sam Phan Bok's rocky 'grand canyon' of the Mekong and Pha Taem's prehistoric cliff paintings.",
       stays: [
         { name: "Sunee Grand Hotel Ubon", kind: "Hotel", area: "City centre", nightly: 1900, rating: 4.3 },
         { name: "Tohsang Khongjiam Resort", kind: "Resort", area: "Mekong at Khong Chiam", nightly: 3200, rating: 4.4 },
         { name: "The Outside Resort (representative)", kind: "Resort", area: "Near Pha Taem", nightly: 1800, rating: 4.2 }
       ] },
-    { id: "chiangkhan", title: "Chiang Khan Riverside", country: "Thailand", region: "Loei", days: 2, rating: 4.5, price: 4800, type: "Cultural", grad: "chiangkhan", tags: ["Mekong", "Walking street"], blurb: "A wooden old town on the Mekong — morning alms, a lantern-lit walking street and Phu Thok mist.",
+    { id: "chiangkhan", title: "Chiang Khan Riverside", country: "Thailand", region: "Loei", zone: "Isan", days: 2, rating: 4.5, price: 4800, type: "Cultural", grad: "chiangkhan", tags: ["Mekong", "Walking street"], blurb: "A wooden old town on the Mekong — morning alms, a lantern-lit walking street and Phu Thok mist.",
       stays: [
         { name: "Chiang Khan Hill Resort", kind: "Resort", area: "Kaeng Khut Khu", nightly: 2200, rating: 4.4 },
         { name: "Chiangkhan River Mountain Resort", kind: "Resort", area: "Riverside", nightly: 2600, rating: 4.5 },
         { name: "Loei riverside guesthouse (representative)", kind: "Guesthouse", area: "Walking street", nightly: 1200, rating: 4.3 }
       ] },
-    { id: "samui", title: "Koh Samui Island Luxe", country: "Thailand", region: "Surat Thani", days: 3, rating: 4.6, price: 9800, type: "Beach", grad: "samui", tags: ["Palm beaches", "Big Buddha"], blurb: "Chaweng's palm-lined sands, the Big Buddha and hilltop infinity pools.",
+    { id: "samui", title: "Koh Samui Island Luxe", country: "Thailand", region: "Surat Thani", zone: "Gulf", days: 3, rating: 4.6, price: 9800, type: "Beach", grad: "samui", tags: ["Palm beaches", "Big Buddha"], blurb: "Chaweng's palm-lined sands, the Big Buddha and hilltop infinity pools.",
       stays: [
         { name: "Banyan Tree Samui", kind: "Resort", area: "Lamai, private bay", nightly: 14000, rating: 4.8 },
         { name: "Santiburi Koh Samui", kind: "Resort", area: "Mae Nam Beach", nightly: 8600, rating: 4.7 },
         { name: "Anantara Bophut Koh Samui", kind: "Resort", area: "Bophut Beach", nightly: 7200, rating: 4.6 }
       ] },
-    { id: "phangan", title: "Koh Pha Ngan Beaches", country: "Thailand", region: "Surat Thani", days: 3, rating: 4.4, price: 7600, type: "Beach", grad: "phangan", tags: ["Secret coves", "Waterfalls"], blurb: "Beyond the Full Moon Party — quiet northern coves, jungle waterfalls and viewpoints.",
+    { id: "phangan", title: "Koh Pha Ngan Beaches", country: "Thailand", region: "Surat Thani", zone: "Gulf", days: 3, rating: 4.4, price: 7600, type: "Beach", grad: "phangan", tags: ["Secret coves", "Waterfalls"], blurb: "Beyond the Full Moon Party — quiet northern coves, jungle waterfalls and viewpoints.",
       stays: [
         { name: "Anantara Rasananda Koh Phangan", kind: "Resort", area: "Thong Nai Pan Noi", nightly: 9800, rating: 4.7 },
         { name: "SANTHIYA Koh Phangan Resort & Spa", kind: "Resort", area: "Thong Nai Pan", nightly: 7400, rating: 4.6 },
         { name: "Buri Rasa Village Koh Phangan", kind: "Resort", area: "Baan Tai", nightly: 4200, rating: 4.4 }
       ] },
-    { id: "kohtao", title: "Koh Tao Diving Weekend", country: "Thailand", region: "Surat Thani", days: 3, rating: 4.5, price: 6800, type: "Adventure", grad: "kohtao", tags: ["Diving", "Koh Nang Yuan"], blurb: "Thailand's dive-school island — easy reefs, the Koh Nang Yuan viewpoint and sunset bays.",
+    { id: "kohtao", title: "Koh Tao Diving Weekend", country: "Thailand", region: "Surat Thani", zone: "Gulf", days: 3, rating: 4.5, price: 6800, type: "Adventure", grad: "kohtao", tags: ["Diving", "Koh Nang Yuan"], blurb: "Thailand's dive-school island — easy reefs, the Koh Nang Yuan viewpoint and sunset bays.",
       stays: [
         { name: "Koh Tao Cabana", kind: "Resort", area: "Sairee, headland", nightly: 4600, rating: 4.4 },
         { name: "Jamahkiri Resort & Spa", kind: "Resort", area: "Thian Og Bay", nightly: 5200, rating: 4.5 },
         { name: "Charm Churee Villa", kind: "Resort", area: "Jansom Bay", nightly: 3600, rating: 4.3 }
       ] },
-    { id: "khaosok", title: "Khao Sok Rainforest & Lake", country: "Thailand", region: "Surat Thani", days: 3, rating: 4.7, price: 7200, type: "Adventure", grad: "khaosok", tags: ["Cheow Lan Lake", "Rainforest"], blurb: "Limestone karsts over emerald Cheow Lan Lake, floating bungalows and ancient rainforest.",
+    { id: "khaosok", title: "Khao Sok Rainforest & Lake", country: "Thailand", region: "Surat Thani", zone: "Andaman", days: 3, rating: 4.7, price: 7200, type: "Adventure", grad: "khaosok", tags: ["Cheow Lan Lake", "Rainforest"], blurb: "Limestone karsts over emerald Cheow Lan Lake, floating bungalows and ancient rainforest.",
       stays: [
         { name: "Elephant Hills", kind: "Camp", area: "Luxury tented camp", nightly: 12000, rating: 4.8 },
         { name: "500 Rai Floating Resort", kind: "Resort", area: "Cheow Lan Lake", nightly: 5200, rating: 4.6 },
         { name: "Khao Sok Rainforest Resort (representative)", kind: "Resort", area: "Park entrance", nightly: 2200, rating: 4.3 }
       ] },
-    { id: "phuket", title: "Phuket Beaches & Old Town", country: "Thailand", region: "Phuket", days: 3, rating: 4.5, price: 8900, type: "Beach", grad: "phuket", tags: ["Sino-Portuguese", "Beach clubs"], blurb: "Andaman beaches, Sino-Portuguese old town lanes and clifftop sunset bars.",
+    { id: "phuket", title: "Phuket Beaches & Old Town", country: "Thailand", region: "Phuket", zone: "Andaman", days: 3, rating: 4.5, price: 8900, type: "Beach", grad: "phuket", tags: ["Sino-Portuguese", "Beach clubs"], blurb: "Andaman beaches, Sino-Portuguese old town lanes and clifftop sunset bars.",
       stays: [
         { name: "The Nai Harn", kind: "Resort", area: "Nai Harn Beach", nightly: 9800, rating: 4.7 },
         { name: "Rosewood Phuket", kind: "Resort", area: "Emerald Bay", nightly: 18000, rating: 4.8 },
         { name: "Amari Phuket", kind: "Resort", area: "Patong headland", nightly: 5200, rating: 4.5 }
       ] },
-    { id: "krabi", title: "Krabi & Railay Cliffs", country: "Thailand", region: "Krabi", days: 3, rating: 4.7, price: 7800, type: "Beach", grad: "krabi", tags: ["Limestone", "Railay"], blurb: "Boat-only Railay, towering limestone, Phra Nang cave beach and island-hopping.",
+    { id: "krabi", title: "Krabi & Railay Cliffs", country: "Thailand", region: "Krabi", zone: "Andaman", days: 3, rating: 4.7, price: 7800, type: "Beach", grad: "krabi", tags: ["Limestone", "Railay"], blurb: "Boat-only Railay, towering limestone, Phra Nang cave beach and island-hopping.",
       stays: [
         { name: "Rayavadee", kind: "Resort", area: "Railay / Phra Nang", nightly: 22000, rating: 4.8 },
         { name: "Dusit Thani Krabi Beach Resort", kind: "Resort", area: "Klong Muang Beach", nightly: 6200, rating: 4.6 },
         { name: "Sofitel Krabi Phokeethra", kind: "Resort", area: "Klong Muang", nightly: 5400, rating: 4.6 }
       ] },
-    { id: "phiphi", title: "Koh Phi Phi Islands", country: "Thailand", region: "Krabi", days: 3, rating: 4.5, price: 8600, type: "Beach", grad: "phiphi", tags: ["Maya Bay", "Viewpoint"], blurb: "The famous viewpoint, Maya Bay and turquoise bays best seen by longtail at dawn.",
+    { id: "phiphi", title: "Koh Phi Phi Islands", country: "Thailand", region: "Krabi", zone: "Andaman", days: 3, rating: 4.5, price: 8600, type: "Beach", grad: "phiphi", tags: ["Maya Bay", "Viewpoint"], blurb: "The famous viewpoint, Maya Bay and turquoise bays best seen by longtail at dawn.",
       stays: [
         { name: "Phi Phi Island Village Beach Resort", kind: "Resort", area: "Loh Ba Kao Bay", nightly: 9200, rating: 4.6 },
         { name: "SAii Phi Phi Island Village", kind: "Resort", area: "Loh Ba Kao", nightly: 8800, rating: 4.6 },
         { name: "Zeavola Resort", kind: "Resort", area: "Laem Tong", nightly: 10500, rating: 4.7 }
       ] },
-    { id: "phangnga", title: "Phang Nga Bay & James Bond Island", country: "Thailand", region: "Phang Nga", days: 3, rating: 4.6, price: 7200, type: "Adventure", grad: "phangnga", tags: ["Sea caves", "Kayaking"], blurb: "Sheer karsts rising from the bay — sea-cave kayaking, Koh Panyee and James Bond Island.",
+    { id: "phangnga", title: "Phang Nga Bay & James Bond Island", country: "Thailand", region: "Phang Nga", zone: "Andaman", days: 3, rating: 4.6, price: 7200, type: "Adventure", grad: "phangnga", tags: ["Sea caves", "Kayaking"], blurb: "Sheer karsts rising from the bay — sea-cave kayaking, Koh Panyee and James Bond Island.",
       stays: [
         { name: "Aleenta Phuket-Phang Nga Resort", kind: "Resort", area: "Natai Beach", nightly: 8800, rating: 4.7 },
         { name: "The Sarojin", kind: "Resort", area: "Khao Lak edge", nightly: 9200, rating: 4.7 },
         { name: "Phang Nga bay homestay (representative)", kind: "Homestay", area: "Near the pier", nightly: 1400, rating: 4.3 }
       ] },
-    { id: "kholanta", title: "Koh Lanta Slow Islands", country: "Thailand", region: "Krabi", days: 3, rating: 4.5, price: 7400, type: "Beach", grad: "kholanta", tags: ["Long beaches", "Old town"], blurb: "Long, laid-back west-coast beaches, a stilted old town and sunset from the lighthouse cape.",
+    { id: "kholanta", title: "Koh Lanta Slow Islands", country: "Thailand", region: "Krabi", zone: "Andaman", days: 3, rating: 4.5, price: 7400, type: "Beach", grad: "kholanta", tags: ["Long beaches", "Old town"], blurb: "Long, laid-back west-coast beaches, a stilted old town and sunset from the lighthouse cape.",
       stays: [
         { name: "Pimalai Resort & Spa", kind: "Resort", area: "Ba Kantiang Beach", nightly: 11000, rating: 4.7 },
         { name: "Layana Resort & Spa", kind: "Resort", area: "Long Beach (adults-only)", nightly: 8600, rating: 4.7 },
         { name: "Costa Lanta", kind: "Resort", area: "Klong Dao", nightly: 4200, rating: 4.4 }
       ] },
-    { id: "khaolak", title: "Khao Lak & Similan Diving", country: "Thailand", region: "Phang Nga", days: 3, rating: 4.5, price: 8100, type: "Beach", grad: "khaolak", tags: ["Similans", "Quiet sands"], blurb: "Long quiet beaches and the launch point for the Similan Islands' world-class diving.",
+    { id: "khaolak", title: "Khao Lak & Similan Diving", country: "Thailand", region: "Phang Nga", zone: "Andaman", days: 3, rating: 4.5, price: 8100, type: "Beach", grad: "khaolak", tags: ["Similans", "Quiet sands"], blurb: "Long quiet beaches and the launch point for the Similan Islands' world-class diving.",
       stays: [
         { name: "JW Marriott Khao Lak Resort & Spa", kind: "Resort", area: "Khuk Khak Beach", nightly: 8200, rating: 4.7 },
         { name: "The Sarojin", kind: "Resort", area: "Pakarang Beach", nightly: 9200, rating: 4.8 },
         { name: "Casa de La Flora", kind: "Resort", area: "Khuk Khak", nightly: 7600, rating: 4.6 }
       ] },
-    { id: "lipe", title: "Koh Lipe Andaman Gem", country: "Thailand", region: "Satun", days: 3, rating: 4.6, price: 9200, type: "Beach", grad: "lipe", tags: ["Clearest water", "Snorkelling"], blurb: "The 'Maldives of Thailand' — powder sand and glass-clear water at the far Andaman edge.",
+    { id: "lipe", title: "Koh Lipe Andaman Gem", country: "Thailand", region: "Satun", zone: "Andaman", days: 3, rating: 4.6, price: 9200, type: "Beach", grad: "lipe", tags: ["Clearest water", "Snorkelling"], blurb: "The 'Maldives of Thailand' — powder sand and glass-clear water at the far Andaman edge.",
       stays: [
         { name: "Idyllic Concept Resort", kind: "Resort", area: "Sunrise Beach", nightly: 6800, rating: 4.5 },
         { name: "Serendipity Beach Resort", kind: "Resort", area: "Quiet north cape", nightly: 7600, rating: 4.6 },
