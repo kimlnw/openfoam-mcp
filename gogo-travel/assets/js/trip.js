@@ -89,7 +89,10 @@
     '<div class="stays">' + (trip.stays || []).map(function (s) {
       return '<div class="stay"><div class="stay__ic">' + GOGO.svg("bed", 22) + "</div>" +
         '<div class="stay__main"><div class="stay__name">' + s.name + '<span class="stay__kind">' + s.kind + "</span></div>" +
-        '<div class="stay__meta"><span class="star">' + GOGO.svg("star", 13) + "</span>" + s.rating + " · " + s.area + "</div></div>" +
+        '<div class="stay__meta"><span class="star">' + GOGO.svg("star", 13) + "</span>" + s.rating +
+          (s.real && s.reviews ? ' <span style="color:var(--faint)">(' + s.reviews.toLocaleString() + ")</span>" : "") + " · " + s.area +
+          (s.real && s.gmaps ? ' · <a href="' + s.gmaps + '" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700">Google Maps &#8599;</a>' : "") +
+        "</div></div>" +
         '<div class="stay__price"><b>' + money(s.nightly) + "</b><span>/ night</span></div></div>";
     }).join("") + "</div>" +
     '<p class="stays__note">Sample nightly rates for the demo — confirm live prices with your booking partner.</p>';

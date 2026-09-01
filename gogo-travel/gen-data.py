@@ -11,9 +11,18 @@ Destinations and hotels are REAL places; prices, ratings and availability are
 REPRESENTATIVE SAMPLE values for the demo. Gradients are placeholders shown
 until a real photo (assets/img/<id>.jpg) is dropped in.
 """
-import colorsys, re, pathlib
+import colorsys, json, re, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent
+
+# Real Google Maps data (rating / reviews / Maps link) per hotel, if fetched.
+GOOGLE = {}
+_gp = ROOT / "assets/data/google.json"
+if _gp.exists():
+    try:
+        GOOGLE = json.load(open(_gp, encoding="utf-8")).get("hotels", {})
+    except Exception:
+        GOOGLE = {}
 
 # muted "quiet-luxury" gradient generator (teal / gold-wine / plum / forest) ----
 def hx(h, s, l):
@@ -208,11 +217,18 @@ for i, d in enumerate(DESTINATIONS):
 
 def js_str(s): return '"' + s.replace('"', '\\"') + '"'
 
+def stay_obj(s):
+    g = GOOGLE.get(s["name"])
+    real = bool(g and g.get("rating") is not None)
+    rating = round(g["rating"], 1) if real else s["rating"]
+    out = '{ name: %s, kind: %s, area: %s, nightly: %d, rating: %s' % (
+        js_str(s["name"]), js_str(s["kind"]), js_str(s["area"]), s["nightly"], rating)
+    if real:
+        out += ', reviews: %d, gmaps: %s, real: true' % (int(g.get("reviews") or 0), js_str(g.get("maps") or ""))
+    return out + " }"
+
 def trip_obj(d):
-    stays = ",\n        ".join(
-        '{ name: %s, kind: %s, area: %s, nightly: %d, rating: %s }' % (
-            js_str(s["name"]), js_str(s["kind"]), js_str(s["area"]), s["nightly"], s["rating"])
-        for s in d["stays"])
+    stays = ",\n        ".join(stay_obj(s) for s in d["stays"])
     tags = "[" + ", ".join(js_str(t) for t in d["tags"]) + "]"
     return (
         '    { id: %s, title: %s, country: "Thailand", region: %s, zone: %s, days: %d, rating: %s, price: %d, type: %s, grad: %s, tags: %s, blurb: %s,\n'
