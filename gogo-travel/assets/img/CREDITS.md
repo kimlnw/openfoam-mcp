@@ -2,9 +2,15 @@
 
 Destination photos from Wikimedia Commons. Keep attribution with the site.
 
-- **amphawa.jpg** — Rangan Datta Wiki · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Amphawa_Floating_Market_16a.jpg
+- **amphawa.jpg** — This Photo was taken by Supanut Arunoprayote.
+
+Feel free to use any of my images, but please mention me as the author and may send me a message.  (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เครดิตผู้ถ่ายและอาจส่งข้อความบอกกล่าวด้วย) 
+
+
+
+Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract. · CC BY 4.0 · https://commons.wikimedia.org/wiki/File:Luang_Por_Dam.jpg
 - **ayutthaya.jpg** — Evilarry · Public domain · https://commons.wikimedia.org/wiki/File:Ayutthaya_Thailand_2004.jpg
-- **pattaya.jpg** — Don Ramey Logan · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Pattaya_at_night_by_Don_Ramey_Logan.jpg
+- **pattaya.jpg** — Vyacheslav Argenberg · CC BY 4.0 · https://commons.wikimedia.org/wiki/File:Pattaya_Beach,_Trees,_Thailand.jpg
 - **bangkok.jpg** — Diego Delso · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Templo_Wat_Arun,_Bangkok,_Tailandia,_2013-08-22,_DD_30.jpg
 - **kanchanaburi.jpg** — PumpkinSky · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Bridge_on_the_River_Kwai_-_tourist_plaza.JPG
 - **samet.jpg** — Ken Eckert · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Ko_Samet_Beach,_Thailand.jpg
@@ -19,19 +25,7 @@ Destination photos from Wikimedia Commons. Keep attribution with the site.
 - **pai.jpg** — Bernhard T · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Pai_Canyon,_Thailand_2012-12-08_-_panoramio.jpg
 - **nan.jpg** — (WT-fr) Ellnik at French Wikivoyage · CC BY-SA 1.0 · https://commons.wikimedia.org/wiki/File:Wat_Phumin_devant,_Nan.jpg
 - **sukhothai.jpg** — This Photo was taken by Supanut Arunoprayote.
-
-Feel free to use any of my images, but please mention me as the author and may send me a message.  (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เครดิตผู้ถ่ายและอาจส่งข้อความบอกกล่าวด้วย) 
-
-
-
-Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract. · CC BY 4.0 · https://commons.wikimedia.org/wiki/File:Wat_Mahathat,_Sukhothai_(I).jpg
 - **ubon.jpg** — This Photo was taken by Supanut Arunoprayote.
-
-Feel free to use any of my images, but please mention me as the author and may send me a message.  (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เครดิตผู้ถ่ายและอาจส่งข้อความบอกกล่าวด้วย) 
-
-
-
-Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract. · CC BY 4.0 · https://commons.wikimedia.org/wiki/File:Sam_Phan_Bok_20251226.jpg
 - **chiangkhan.jpg** — Christophe95 · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Chiang_Khan_Walking_Street.jpg
 - **samui.jpg** — Manfred Werner · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Koh_Samui_Lipa_Noi2.jpg
 - **phangan.jpg** — Per Meistrup · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Koh_Phangan_ferry.jpg
