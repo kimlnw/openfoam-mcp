@@ -37,9 +37,9 @@ PAUSE = 1.2  # polite delay between destinations, to stay under rate limits
 # specific to the place). The first term that returns a good landscape photo
 # wins; the rest are fallbacks so a single miss doesn't leave a blank card.
 QUERIES = {
-    "amphawa":       ["Amphawa floating market", "Amphawa canal Samut Songkhram", "Maeklong railway market"],
+    "amphawa":       ["Wat Bang Kung Amphawa", "Amphawa Floating Market canal boats", "Maeklong Railway Market train"],
     "ayutthaya":     ["Wat Chaiwatthanaram Ayutthaya", "Ayutthaya historical park temple", "Wat Mahathat Ayutthaya"],
-    "pattaya":       ["Pattaya Beach aerial", "Pattaya Beach Thailand", "Pattaya city viewpoint"],
+    "pattaya":       ["Pattaya Bay viewpoint", "Pattaya Beach Chonburi", "Jomtien Beach Pattaya"],
     "bangkok":       ["Wat Arun Bangkok", "Bangkok Chao Phraya river skyline", "Grand Palace Bangkok"],
     "kanchanaburi":  ["Bridge over the River Kwai Kanchanaburi", "Erawan Falls Kanchanaburi", "River Kwai Kanchanaburi"],
     "samet":         ["Sai Kaew Beach Ko Samet", "Ko Samet beach", "Koh Samet island Thailand"],
@@ -146,21 +146,40 @@ def find_image(terms):
     return None
 
 
+def parse_credits(path):
+    """Recover existing credit lines by id, so kept photos keep attribution."""
+    out = {}
+    if os.path.exists(path):
+        for line in open(path, encoding="utf-8"):
+            m = re.match(r"- \*\*(\w+)\.jpg\*\*", line)
+            if m:
+                out[m.group(1)] = line.rstrip("\n")
+    return out
+
+
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
-    credits = ["# Photo credits\n",
-               "Destination photos from Wikimedia Commons. Keep attribution with the site.\n"]
+    prev = parse_credits(os.path.join(here, "CREDITS.md"))
+    lines = {}   # id -> credit line
     ok = 0
     for tid, terms in QUERIES.items():
+        path = os.path.join(here, tid + ".jpg")
+        # Keep a photo that's already here (delete <id>.jpg to re-fetch just it).
+        if os.path.exists(path) and os.path.getsize(path) >= 1000:
+            if tid in prev:
+                lines[tid] = prev[tid]
+            print("  = kept %s.jpg" % tid)
+            ok += 1
+            continue
         try:
             img = find_image(terms)
             if not img:
                 print("  ! no result for", tid)
                 continue
             data = get(img["thumb"])              # download FIRST; only write on success
-            with open(os.path.join(here, tid + ".jpg"), "wb") as f:
+            with open(path, "wb") as f:
                 f.write(data)
-            credits.append("- **%s.jpg** — %s · %s · %s" % (tid, img["artist"], img["license"], img["page"]))
+            lines[tid] = "- **%s.jpg** — %s · %s · %s" % (tid, img["artist"], img["license"], img["page"])
             print("  ✓ %s.jpg  (%s)  [%s]" % (tid, img["license"], img["term"]))
             ok += 1
         except Exception as e:
@@ -171,9 +190,14 @@ def main():
         if f.endswith(".jpg") and os.path.getsize(os.path.join(here, f)) < 1000:
             os.remove(os.path.join(here, f))
             print("  – removed empty", f)
-    with open(os.path.join(here, "CREDITS.md"), "w") as f:
+    credits = ["# Photo credits\n",
+               "Destination photos from Wikimedia Commons. Keep attribution with the site.\n"]
+    for tid in QUERIES:
+        if tid in lines:
+            credits.append(lines[tid])
+    with open(os.path.join(here, "CREDITS.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(credits) + "\n")
-    print("\nDone: %d/%d photos. Wrote CREDITS.md." % (ok, len(QUERIES)))
+    print("\nDone: %d/%d photos present. Wrote CREDITS.md." % (ok, len(QUERIES)))
     if ok < len(QUERIES):
         print("Tip: tweak the QUERIES terms, or drop your own <id>.jpg files here.")
     else:
