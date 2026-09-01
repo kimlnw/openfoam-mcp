@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trip — GOGO!</title>
+  <meta name="description" content="Trip details, day-by-day itinerary, reviews and booking on GOGO!.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="trip">
+  <header id="site-header"></header>
+
+  <main class="wrap" id="trip-root">
+    <p class="crumb" id="crumb"></p>
+
+    <div class="g-main" id="gMain">
+      <div class="g-main__scrim"></div>
+      <span class="g-main__cap" id="gCap"></span>
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+
+    <div class="trip-title-row">
+      <div>
+        <h1 id="tripTitle"></h1>
+        <div class="trip-meta" id="tripMeta"></div>
+      </div>
+      <div class="trip-actions" id="tripActions"></div>
+    </div>
+
+    <div class="weekfit" id="weekfit"></div>
+
+    <div class="trip-layout">
+      <div>
+        <div class="tabs" id="tabs"></div>
+        <div id="panel-overview"></div>
+        <div id="panel-itinerary" hidden></div>
+        <div id="panel-reviews" hidden></div>
+      </div>
+      <aside class="booking" id="booking"></aside>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/trip.js"></script>
+</body>
+</html>

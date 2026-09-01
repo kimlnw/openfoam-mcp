@@ -1,0 +1,64 @@
+name: GOGO — fetch Google Maps data (SerpApi)
+
+# Enriches GOGO! hotels with real Google Maps ratings/reviews/links via SerpApi,
+# then regenerates data.js and the single-file bundle and commits the result.
+#
+# Setup (one time): add your SerpApi key as a repo secret named SERPAPI_KEY
+#   (Settings → Secrets and variables → Actions → New repository secret).
+# Run it: touch/commit gogo-travel/.google-fetch-trigger on this branch, or use
+#   the "Run workflow" button once this workflow is on the default branch.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/gogo-travel-website-ui-mgc1d6]
+    paths:
+      - gogo-travel/.google-fetch-trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gogo-fetch-google-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Pillow (for the bundle's photo downscaling)
+        run: pip install --quiet Pillow
+
+      - name: Fetch Google Maps data from SerpApi
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: |
+          if [ -z "$SERPAPI_KEY" ]; then
+            echo "::error::SERPAPI_KEY secret is not set. Add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          python3 gogo-travel/fetch-google-data.py
+
+      - name: Regenerate data.js and the single-file bundle
+        run: |
+          cd gogo-travel
+          python3 gen-data.py
+          python3 build-app.py
+
+      - name: Commit enriched data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A gogo-travel/assets/data gogo-travel/assets/js/data.js gogo-travel/gogo-app.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Enrich hotels with real Google Maps data (SerpApi, fetched on CI)"
+            git push
+          fi

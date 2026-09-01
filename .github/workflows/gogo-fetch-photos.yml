@@ -1,0 +1,58 @@
+name: GOGO — fetch destination photos
+
+# Runs the GOGO! photo fetcher on a GitHub-hosted runner (which has open
+# internet), downloading one freely-licensed, place-matched photo per
+# destination from Wikimedia Commons and committing them back to the branch.
+# Triggers on demand, or automatically when the fetcher / this workflow changes
+# on the feature branch. Scoped tightly so it never runs elsewhere.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/gogo-travel-website-ui-mgc1d6]
+    paths:
+      - gogo-travel/assets/img/fetch-photos.py
+      - .github/workflows/gogo-fetch-photos.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gogo-fetch-photos-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch photos from Wikimedia Commons
+        run: python3 gogo-travel/assets/img/fetch-photos.py
+
+      - name: Keep a copy as a run artifact (in case the commit can't be pushed)
+        uses: actions/upload-artifact@v4
+        with:
+          name: gogo-destination-photos
+          path: |
+            gogo-travel/assets/img/*.jpg
+            gogo-travel/assets/img/CREDITS.md
+          if-no-files-found: warn
+
+      - name: Commit photos to the branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A gogo-travel/assets/img
+          if git diff --cached --quiet; then
+            echo "No photo changes to commit."
+          else
+            git commit -m "Add destination photos (fetched on CI from Wikimedia Commons)"
+            git push
+          fi
